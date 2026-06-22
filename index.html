@@ -102,6 +102,10 @@
     position: relative;
     z-index: 1;
   }
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
   .hero-eyebrow {
     font-size: 10px;
     letter-spacing: 0.22em;
@@ -444,6 +448,15 @@
     gap: 40px;
     align-items: flex-start;
     flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ulrich-strip-inner {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
   .ulrich-left { flex: 0 0 120px; }
   .ulrich-stamp {
@@ -607,6 +620,7 @@
 
 <!-- ABOUT -->
 <section class="section about" id="about">
+  <div class="section-inner">
   <div class="section-label">關於 Michelle</div>
   <div class="about-grid">
 
@@ -666,13 +680,15 @@
       </div>
     </div>
 
-  </div>
+  </div><!-- end about-grid -->
+  </div><!-- end section-inner -->
 </section>
 
 <hr class="divider">
 
 <!-- PRODUCTS -->
 <section class="section products" id="products">
+  <div class="section-inner">
   <div class="section-label">4 核心產品線</div>
   <h2 class="section-title">模組化精準引導</h2>
   <p class="section-sub">每條產品線都源自真實組織現場的淬煉，不是學術理論，而是明天就能用的框架與工具。</p>
@@ -739,11 +755,11 @@
       <a href="mailto:michelle@xi-gen.co?subject=Career Coaching 工作坊諮詢" class="product-cta coming">即將推出 · 預先登記 →</a>
     </div>
 
-  </div>
+  </div><!-- end products-grid -->
+  </div><!-- end section-inner -->
 </section>
-
-<!-- ULRICH STRIP -->
 <div class="ulrich-strip">
+  <div class="ulrich-strip-inner">
   <div class="ulrich-left">
     <div class="ulrich-stamp">
       Dave Ulrich<br>
@@ -759,6 +775,7 @@
       · LinkedIn DM, 2026
     </p>
   </div>
+  </div><!-- end ulrich-strip-inner -->
 </div>
 
 <!-- CTA -->

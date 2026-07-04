@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Coaching · 職涯教練工作坊｜希世代 XI Gen</title>
+<meta name="description" content="20 / 30 / 40 世代各自精彩的教練引導工作坊。先理解人，再推動改變；先認識自己，再規劃職涯。希世代 XI Gen · Michelle Jian">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2A3F62;
+    --navy-deep:#1B2C48;
+    --gold:#C9A84C;
+    --gold-soft:#E4D3A6;
+    --paper:#FAF8F4;
+    --card:#FFFFFF;
+    --ink:#20293A;
+    --ink-soft:#5B6478;
+    --line:#E4DFD4;
+    --skyblue:#4A7FA5;
+    --skyblue-soft:#E6EEF3;
+    --slate:#7E8CA0;
+    --silver:#C8D4DC;
+    --silver-soft:#F0F3F5;
+    --gold-deep:#B4913A;
+    --gold-card-soft:#F7F0DE;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans TC', sans-serif;
+    font-weight:400;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond','Noto Sans TC',serif;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;
+  }
+  .eyebrow::before{content:"";width:18px;height:1px;background:var(--gold);}
+
+  /* NAV */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,244,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.bar{
+    max-width:1080px;margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    flex-wrap:wrap;
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;
+    color:var(--navy);letter-spacing:.02em;
+  }
+  .brand span{color:var(--gold);}
+  .navlinks{display:flex;gap:26px;font-size:14px;color:var(--ink-soft);flex-wrap:wrap;}
+  .navlinks a:hover{color:var(--navy);}
+  .navlinks .current{color:var(--navy);font-weight:600;border-bottom:1.5px solid var(--gold);padding-bottom:2px;}
+
+  /* HERO */
+  .hero{padding:76px 0 56px;}
+  .hero-badge{margin-bottom:22px;}
+  .hero h1{
+    font-size:clamp(40px,7vw,68px);
+    font-weight:500;color:var(--navy);
+    margin:14px 0 6px;line-height:1.05;
+  }
+  .hero h1 em{font-style:italic;font-weight:600;color:var(--gold);}
+  .hero .tagline{
+    font-size:20px;color:var(--ink-soft);margin-bottom:26px;font-weight:400;
+  }
+  .hero .lede{
+    max-width:640px;font-size:16.5px;color:var(--ink);margin-bottom:34px;
+  }
+  .hero .lede b{color:var(--navy);}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;border-radius:999px;font-size:14.5px;font-weight:600;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--navy);color:#fff;}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(42,63,98,.25);}
+  .btn-ghost{border:1px solid var(--navy);color:var(--navy);}
+  .btn-ghost:hover{background:var(--navy);color:#fff;}
+
+  /* STAT BAR */
+  .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;margin-top:52px;
+  }
+  .stat{background:var(--card);padding:26px 22px;text-align:left;}
+  .stat .num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--navy);}
+  .stat .label{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin-top:4px;}
+  .hero-note{margin-top:16px;font-size:13px;color:var(--ink-soft);}
+  .hero-note b{color:var(--navy);}
+
+  section{padding:74px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(28px,4vw,36px);color:var(--navy);font-weight:500;margin:12px 0 10px;}
+  .section-head h2 em{font-style:italic;color:var(--gold);font-weight:600;}
+  .section-head p{color:var(--ink-soft);font-size:15.5px;}
+
+  hr.rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  /* GENERATIONS */
+  .gen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .gen-card{
+    border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+    background:var(--card);display:flex;flex-direction:column;
+  }
+  .gen-head{padding:22px 22px 18px;}
+  .gen-head .stage{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;}
+  .gen-head h3{font-family:'Cormorant Garamond',serif;font-size:30px;margin:4px 0 2px;font-weight:600;}
+  .gen-head .sub{font-size:14px;opacity:.9;}
+
+  .gen-20 .gen-head{background:var(--skyblue);color:#fff;}
+  .gen-30 .gen-head{background:var(--slate);color:#fff;}
+  .gen-40 .gen-head{background:var(--gold-deep);color:#fff;}
+
+  .gen-body{padding:22px 22px 26px;flex:1;}
+  .gen-body ul{margin:0;padding:0;list-style:none;font-size:14px;color:var(--ink);}
+  .gen-body ul li{padding-left:18px;position:relative;margin-bottom:11px;line-height:1.6;}
+  .gen-body ul li::before{content:"▸";position:absolute;left:0;top:0;font-weight:600;}
+  .gen-20 ul li::before{color:var(--skyblue);}
+  .gen-30 ul li::before{color:var(--slate);}
+  .gen-40 ul li::before{color:var(--gold-deep);}
+
+  .gen-20{box-shadow:inset 0 3px 0 0 var(--silver);}
+  .gen-30{box-shadow:inset 0 3px 0 0 var(--skyblue);}
+  .gen-40{box-shadow:inset 0 3px 0 0 var(--silver);}
+
+  .callout{
+    margin-top:34px;background:var(--navy);color:#fff;border-radius:var(--radius);
+    padding:26px 30px;font-size:15px;line-height:1.7;
+  }
+  .callout b{color:var(--gold-soft);}
+  .callout .src{display:block;margin-top:10px;font-size:12.5px;color:rgba(255,255,255,.6);}
+
+  /* QUOTE */
+  .quote-block{
+    background:var(--navy);color:#fff;border-radius:20px;
+    padding:56px 48px;text-align:center;position:relative;overflow:hidden;
+  }
+  .quote-block::before{
+    content:"“";position:absolute;top:-10px;left:24px;font-family:'Cormorant Garamond',serif;
+    font-size:160px;color:rgba(201,168,76,.18);line-height:1;
+  }
+  .quote-block p.q{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+    font-size:clamp(22px,3.4vw,32px);max-width:720px;margin:0 auto 20px;position:relative;line-height:1.5;
+  }
+  .quote-block .who{color:var(--gold-soft);font-size:14.5px;letter-spacing:.03em;}
+
+  /* PODCAST SOURCES */
+  .pod-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .pod-chip{
+    flex:1;min-width:230px;border:1px solid var(--line);background:var(--card);
+    border-radius:12px;padding:16px 18px;font-size:13px;color:var(--ink-soft);
+  }
+  .pod-chip b{display:block;color:var(--navy);font-size:14px;margin-bottom:3px;}
+  .pod-chip:hover{border-color:var(--gold);}
+
+  /* CTA FOOTER */
+  .cta-final{
+    background:var(--navy-deep);color:#fff;border-radius:24px;
+    padding:56px 48px;text-align:center;
+  }
+  .cta-final h2{font-size:clamp(26px,4vw,38px);margin:0 0 12px;font-weight:500;}
+  .cta-final h2 em{color:var(--gold);font-style:italic;font-weight:600;}
+  .cta-final p{color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 30px;font-size:15px;}
+  .cta-final .cta-row{justify-content:center;}
+  .cta-final .btn-primary{background:var(--gold);color:var(--navy-deep);}
+  .cta-final .btn-ghost{border-color:rgba(255,255,255,.4);color:#fff;}
+  .cta-final .btn-ghost:hover{background:#fff;color:var(--navy-deep);}
+
+  footer.site{padding:44px 0 60px;font-size:13px;color:var(--ink-soft);}
+  footer.site .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding-top:24px;}
+  footer.site b{color:var(--navy);}
+
+  .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+  .tag{
+    font-size:12.5px;color:var(--ink-soft);border:1px solid var(--line);
+    border-radius:999px;padding:5px 13px;background:var(--card);
+  }
+
+  @media (max-width:860px){
+    .stats{grid-template-columns:1fr;}
+    .gen-grid{grid-template-columns:1fr;}
+    .quote-block,.cta-final{padding:40px 24px;}
+    nav.bar{flex-direction:column;align-items:flex-start;gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="bar">
+    <a class="brand" href="https://xi-gen.github.io">希世代 <span>XI Gen</span> · Career Coaching</a>
+    <div class="navlinks">
+      <a href="https://xi-gen.github.io">← 回首頁</a>
+      <a href="https://xi-gen.github.io/oic/index.html">OIC 組織診斷</a>
+      <a class="current" href="#">Career Coaching</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge eyebrow">希世代 XI Gen · 職涯教練工作坊</div>
+    <h1>Career <em>Coaching</em></h1>
+    <div class="tagline">20 · 30 · 40 世代生涯引導互動工作坊 —— 各自精彩</div>
+    <div class="lede">
+      <b>先理解人，再推動改變；先認識自己，再規劃職涯。</b>
+      20 代忙著探索、30 代忙著證明、40 代忙著扛責——每個世代都有自己「應該」的標準，也都有屬於自己的功課。這場工作坊不給答案，而是透過教練式引導對話，讓每一代人用自己的尺，重新量一次「走得好」是什麼樣子。
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:michelle@xi-gen.co?subject=Career Coaching 工作坊諮詢">預約工作坊諮詢 →</a>
+      <a class="btn btn-ghost" href="#generations">了解三世代框架</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">3</div><div class="label">集 Podcast 訪談<br>洞察來源</div></div>
+      <div class="stat"><div class="num">20·30·40</div><div class="label">三世代<br>生涯課題</div></div>
+      <div class="stat"><div class="num">90 min</div><div class="label">充分引導與對話的<br>全員教練課</div></div>
+    </div>
+    <div class="hero-note">最佳體驗規模 · 上限 <b>15 人</b> · 每 <b>3 人</b>一小組 · 純線下工作坊</div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- GENERATIONS -->
+  <section id="generations">
+    <div class="section-head">
+      <div class="eyebrow">三世代框架</div>
+      <h2>撕掉社會化標籤，<em>用自己的尺去量成功</em></h2>
+      <p>你現在所在的世代，有什麼「應該」正在框住你？三個世代，三種核心焦點。</p>
+    </div>
+
+    <div class="gen-grid">
+      <div class="gen-card gen-20">
+        <div class="gen-head">
+          <div class="stage">Stage 1 · 探索期</div>
+          <h3>20 世代</h3>
+          <div class="sub">廣泛嘗試 · 建立自我覺察</div>
+        </div>
+        <div class="gen-body">
+          <ul>
+            <li>不急著鎖定一個身份，所有嘗試都是養分</li>
+            <li>把每段經歷當鏡子：觀察自己的能量與耗損</li>
+            <li>培養「可遷移技能」，而非只累積職稱</li>
+            <li>建立健康的金錢觀與時間自主意識</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gen-card gen-30">
+        <div class="gen-head">
+          <div class="stage">Stage 2 · 定向期</div>
+          <h3>30 世代</h3>
+          <div class="sub">撕掉標籤 · 重新定義成功</div>
+        </div>
+        <div class="gen-body">
+          <ul>
+            <li>區分「社會期待的成功」與「我真正想要的生活」</li>
+            <li>從「累積經歷」轉向「深化影響力」</li>
+            <li>學習設定邊界，拒絕不對齊自身方向的機會</li>
+            <li>建立個人品牌與觀點，讓別人看見獨特性</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gen-card gen-40">
+        <div class="gen-head">
+          <div class="stage">Stage 3 · 深化期</div>
+          <h3>40 世代</h3>
+          <div class="sub">善用智慧 · 重新定向意義</div>
+        </div>
+        <div class="gen-body">
+          <ul>
+            <li>把過去的經驗轉化為「可教授的智慧」</li>
+            <li>思考「後職涯」：頭銜之外，我還剩下什麼？</li>
+            <li>從個人成就轉向：如何讓下一代站上肩膀</li>
+            <li>對齊工作與個人價值觀，不再用時間換金錢</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>※ 自我覺察是每個年齡層做出好職涯決策的共同基礎</b> —— 不論你正處於哪個世代，這場工作坊都從同一個起點開始：先認識自己，再談下一步。
+      <span class="src">— Michelle Jian · EP185《最近工作還好嗎》</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- QUOTE -->
+  <section>
+    <div class="quote-block">
+      <p class="q">先理解人，再推動改變；先認識自己，再規劃職涯。不論是帶團隊還是走自己的路，都要從真實的現場出發，而不是從應該的樣子出發。</p>
+      <div class="who">— Michelle Jian · 人資實踐家 · 希世代創辦人</div>
+    </div>
+  </section>
+
+  <!-- PODCAST SOURCES -->
+  <section id="sources">
+    <div class="section-head">
+      <div class="eyebrow">內容來源</div>
+      <h2>三集 Podcast，<em>三段真實對話</em></h2>
+      <p>這場工作坊的所有引導問題，都源自 Michelle 的三段公開訪談，而非套裝理論。</p>
+    </div>
+    <div class="pod-row">
+      <a class="pod-chip" href="https://podcasts.apple.com/tw/podcast/s2ep120-%E7%86%B1%E9%96%80%E8%A9%B1%E9%A1%8C-%E7%9F%AD%E6%9A%AB%E4%BC%91%E6%81%AF-%E6%9C%89%E6%84%8F%E7%BE%A9%E7%9A%84%E6%8E%A2%E7%B4%A2-40%E6%AD%B2%E7%9A%84-%E5%BE%8C%E8%81%B7%E6%B6%AF-%E5%BF%83%E5%A2%83%E8%88%87%E6%96%B0%E8%88%88%E5%B8%8C%E4%B8%96%E4%BB%A3-%E5%B0%88%E8%A8%AA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6/id1546960737?i=1000720569075">
+        <b>Yourator ·《職涯履行家》</b>S2EP120 · 40 歲的「後職涯」心境與新興希世代！· 2025/8
+      </a>
+      <a class="pod-chip" href="https://podcasts.apple.com/tw/podcast/ep-185-20-30-40%E4%B8%96%E4%BB%A3%E7%9A%84%E8%81%B7%E6%B6%AF%E7%B7%B4%E7%BF%92%E9%A1%8C-%E6%92%95%E6%8E%89%E7%A4%BE%E6%9C%83%E5%8C%96%E6%A8%99%E7%B1%A4-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6-michelle/id1533395130?i=1000730204267">
+        <b>BetweenGos ·《最近工作還好嗎》</b>EP185 · 20、30、40 世代的職涯練習題 · 2025/10
+      </a>
+      <a class="pod-chip" href="https://podcasts.apple.com/br/podcast/ep126-%E5%9C%A8%E7%B5%84%E7%B9%94%E8%AE%8A%E9%9D%A9%E4%B8%AD-%E5%A6%82%E4%BD%95%E5%B8%B6%E5%87%BA%E5%9C%98%E9%9A%8A%E6%BD%9B%E8%83%BD-%E4%BA%BA%E8%B3%87%E9%95%B7%E4%BA%8C%E5%8D%81%E5%B9%B4%E5%BF%83%E6%B3%95%E5%88%86%E4%BA%AB-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-michelle-jian/id1682939097?i=1000735468252&l=en-GB">
+        <b>Hey Coach!·《教練我想問》</b>EP126 · 在組織變革中，如何帶出團隊潛能 · 2025/11
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section>
+    <div class="cta-final">
+      <div class="eyebrow" style="color:var(--gold-soft);">即將推出 · 預先登記</div>
+      <h2>準備好，<em>各自精彩</em>了嗎？</h2>
+      <p>不論你正走在 20、30 還是 40 世代，這場工作坊都會給你一組屬於自己的教練式提問——以及一個帶得走的行動承諾。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:michelle@xi-gen.co?subject=Career Coaching 工作坊諮詢">預先登記 / 洽談企業包班 →</a>
+        <a class="btn btn-ghost" href="https://xi-gen.github.io/oic/index.html">了解 OIC 組織診斷</a>
+      </div>
+      <div class="badge-row" style="justify-content:center;">
+        <span class="tag">20s 探索期</span>
+        <span class="tag">30s 定向期</span>
+        <span class="tag">40s 深化期</span>
+        <span class="tag">Together Is Better</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot-row">
+    <div><b>Michelle Jian · 希世代 XI Gen</b><br>michelle@xi-gen.co · <a href="https://www.linkedin.com/in/michelle-jian-32b8506b">LinkedIn</a></div>
+    <div>希世代 XI Gen · Career Coaching Workshop © 2026 Michelle Jian · All rights reserved</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -170,14 +170,48 @@
   }
   .quote-block .who{color:var(--gold-soft);font-size:14.5px;letter-spacing:.03em;}
 
-  /* PODCAST SOURCES */
-  .pod-row{display:flex;gap:14px;flex-wrap:wrap;}
-  .pod-chip{
-    flex:1;min-width:230px;border:1px solid var(--line);background:var(--card);
-    border-radius:12px;padding:16px 18px;font-size:13px;color:var(--ink-soft);
+  /* PODCAST SOURCES + FAQ (combined compact table) */
+  .pod-table{display:flex;flex-direction:column;gap:14px;}
+  .pod-row{
+    display:grid;grid-template-columns:230px 1fr;gap:18px;
+    padding-bottom:14px;border-bottom:1px solid var(--line);
   }
-  .pod-chip b{display:block;color:var(--navy);font-size:14px;margin-bottom:3px;}
-  .pod-chip:hover{border-color:var(--gold);}
+  .pod-table .pod-row:last-child{border-bottom:none;padding-bottom:0;}
+  .pod-box{
+    display:block;border:1px solid var(--line);background:var(--card);
+    border-radius:12px;padding:14px 16px;font-size:12.5px;color:var(--ink-soft);
+    align-self:start;
+  }
+  .pod-box b{display:block;color:var(--navy);font-size:13.5px;margin-bottom:3px;}
+  .pod-box:hover{border-color:var(--gold);}
+  .pod-faqs{display:flex;flex-direction:column;gap:8px;}
+
+  /* FAQ ACCORDION */
+  .faq-item{
+    border:1px solid var(--line);border-radius:10px;background:var(--card);
+    overflow:hidden;
+  }
+  .faq-item[open]{border-color:var(--gold);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:12px 16px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    font-size:14px;font-weight:600;color:var(--navy);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .q-text{flex:1;}
+  .faq-item summary .chev{
+    flex-shrink:0;width:18px;height:18px;color:var(--ink-soft);
+    transition:transform .2s ease;
+  }
+  .faq-item[open] summary .chev{transform:rotate(180deg);}
+  .faq-item .a-text{
+    padding:0 16px 16px;font-size:13.5px;color:var(--ink);line-height:1.75;
+  }
+
+  @media (max-width:720px){
+    .pod-row{grid-template-columns:1fr;}
+  }
+
 
   /* CTA FOOTER */
   .cta-final{
@@ -323,25 +357,80 @@
     </div>
   </section>
 
-  <!-- PODCAST SOURCES -->
+  <!-- PODCAST SOURCES + FAQ -->
   <section id="sources">
     <div class="section-head">
       <div class="eyebrow">內容來源</div>
       <h2>三集 Podcast，<em>三段真實對話</em></h2>
-      <p>這場工作坊的所有引導問題，都源自 Michelle 的三段公開訪談，而非套裝理論。</p>
+      <p>這場工作坊的所有引導問題，都源自 Michelle 的三段公開訪談。點擊 Podcast 完整聆聽，或是搶先了解精華訪談片段。</p>
     </div>
-    <div class="pod-row">
-      <a class="pod-chip" href="https://podcasts.apple.com/tw/podcast/s2ep120-%E7%86%B1%E9%96%80%E8%A9%B1%E9%A1%8C-%E7%9F%AD%E6%9A%AB%E4%BC%91%E6%81%AF-%E6%9C%89%E6%84%8F%E7%BE%A9%E7%9A%84%E6%8E%A2%E7%B4%A2-40%E6%AD%B2%E7%9A%84-%E5%BE%8C%E8%81%B7%E6%B6%AF-%E5%BF%83%E5%A2%83%E8%88%87%E6%96%B0%E8%88%88%E5%B8%8C%E4%B8%96%E4%BB%A3-%E5%B0%88%E8%A8%AA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6/id1546960737?i=1000720569075">
-        <b>Yourator ·《職涯履行家》</b>S2EP120 · 40 歲的「後職涯」心境與新興希世代！· 2025/8
-      </a>
-      <a class="pod-chip" href="https://podcasts.apple.com/tw/podcast/ep-185-20-30-40%E4%B8%96%E4%BB%A3%E7%9A%84%E8%81%B7%E6%B6%AF%E7%B7%B4%E7%BF%92%E9%A1%8C-%E6%92%95%E6%8E%89%E7%A4%BE%E6%9C%83%E5%8C%96%E6%A8%99%E7%B1%A4-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6-michelle/id1533395130?i=1000730204267">
-        <b>BetweenGos ·《最近工作還好嗎》</b>EP185 · 20、30、40 世代的職涯練習題 · 2025/10
-      </a>
-      <a class="pod-chip" href="https://podcasts.apple.com/br/podcast/ep126-%E5%9C%A8%E7%B5%84%E7%B9%94%E8%AE%8A%E9%9D%A9%E4%B8%AD-%E5%A6%82%E4%BD%95%E5%B8%B6%E5%87%BA%E5%9C%98%E9%9A%8A%E6%BD%9B%E8%83%BD-%E4%BA%BA%E8%B3%87%E9%95%B7%E4%BA%8C%E5%8D%81%E5%B9%B4%E5%BF%83%E6%B3%95%E5%88%86%E4%BA%AB-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-michelle-jian/id1682939097?i=1000735468252&l=en-GB">
-        <b>Hey Coach!·《教練我想問》</b>EP126 · 在組織變革中，如何帶出團隊潛能 · 2025/11
-      </a>
+
+    <div class="pod-table">
+
+      <div class="pod-row">
+        <a class="pod-box" href="https://podcasts.apple.com/tw/podcast/s2ep120-%E7%86%B1%E9%96%80%E8%A9%B1%E9%A1%8C-%E7%9F%AD%E6%9A%AB%E4%BC%91%E6%81%AF-%E6%9C%89%E6%84%8F%E7%BE%A9%E7%9A%84%E6%8E%A2%E7%B4%A2-40%E6%AD%B2%E7%9A%84-%E5%BE%8C%E8%81%B7%E6%B6%AF-%E5%BF%83%E5%A2%83%E8%88%87%E6%96%B0%E8%88%88%E5%B8%8C%E4%B8%96%E4%BB%A3-%E5%B0%88%E8%A8%AA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6/id1546960737?i=1000720569075">
+          <b>Yourator ·《職涯履行家》</b><span>S2EP120 · 40 歲的「後職涯」心境與新興希世代！· 2025/8</span>
+        </a>
+        <div class="pod-faqs">
+          <details class="faq-item">
+            <summary><span class="q-text">「希世代」這個名字，是什麼意思？</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="a-text">身為兩個孩子的母親，也是閱人無數的 HR 主管，Michelle 把下一個世代命名為「希世代」——充滿希望的世代。她相信年輕人在對的環境裡，藏著巨大而未被看見的潛能；創辦希世代，就是想打造那個允許試錯、有心理安全感的土壤。</div>
+          </details>
+          <details class="faq-item">
+            <summary><span class="q-text">做了 20 年 HR，這份工作給她最大的禮物是什麼？</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="a-text">Michelle 說，是「能在別人看見自己之前，先看見他們的潛力」。這份工作教會她如何真正理解人性、如何同理——這些後來都成了她陪伴創辦人、HR 與年輕世代最底層的能力。</div>
+          </details>
+        </div>
+      </div>
+
+      <div class="pod-row">
+        <a class="pod-box" href="https://podcasts.apple.com/tw/podcast/ep-185-20-30-40%E4%B8%96%E4%BB%A3%E7%9A%84%E8%81%B7%E6%B6%AF%E7%B7%B4%E7%BF%92%E9%A1%8C-%E6%92%95%E6%8E%89%E7%A4%BE%E6%9C%83%E5%8C%96%E6%A8%99%E7%B1%A4-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6-michelle/id1533395130?i=1000730204267">
+          <b>BetweenGos ·《最近工作還好嗎》</b><span>EP185 · 20、30、40 世代的職涯練習題 · 2025/10</span>
+        </a>
+        <div class="pod-faqs">
+          <details class="faq-item">
+            <summary><span class="q-text">每個世代都有自己的「應該」，你正在被哪一個綁住？</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="a-text">Michelle 觀察到，20 歲被「要不要選對路」綁住，30 歲被「應該要有的成績單」綁住，40 歲則被「不能慢下來」的恐懼綁住。她說，職涯練習題不是要你解開別人的標準，而是先看清楚——這個「應該」，到底是誰訂的？</div>
+          </details>
+          <details class="faq-item">
+            <summary><span class="q-text">如果職涯不是一條線性的路，該怎麼衡量「走得好」？</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="a-text">多數人習慣用「有沒有往上爬」衡量自己，但 Michelle 認為更誠實的問法是：這個階段的我，有沒有更認識自己一點？她強調，自我覺察才是每個世代做出好決定的共同基礎。</div>
+          </details>
+        </div>
+      </div>
+
+      <div class="pod-row">
+        <a class="pod-box" href="https://podcasts.apple.com/br/podcast/ep126-%E5%9C%A8%E7%B5%84%E7%B9%94%E8%AE%8A%E9%9D%A9%E4%B8%AD-%E5%A6%82%E4%BD%95%E5%B8%B6%E5%87%BA%E5%9C%98%E9%9A%8A%E6%BD%9B%E8%83%BD-%E4%BA%BA%E8%B3%87%E9%95%B7%E4%BA%8C%E5%8D%81%E5%B9%B4%E5%BF%83%E6%B3%95%E5%88%86%E4%BA%AB-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-michelle-jian/id1682939097?i=1000735468252&l=en-GB">
+          <b>Hey Coach!·《教練我想問》</b><span>EP126 · 在組織變革中，如何帶出團隊潛能 · 2025/11</span>
+        </a>
+        <div class="pod-faqs">
+          <details class="faq-item">
+            <summary><span class="q-text">推動組織改變，最容易被忽略的第一步是什麼？</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="a-text">很多轉型計畫一開始就急著換制度、換流程，但 Michelle 觀察到，真正卡住組織的，往往是「痛點根本還沒被看懂」。她習慣在啟動任何改變之前，先貼近現場，聽第一線真實的疲憊與困惑——不是急著開藥方，而是先把診斷做對。</div>
+          </details>
+          <details class="faq-item">
+            <summary><span class="q-text">她怎麼定義自己的領導風格？</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="a-text">「成為團隊最堅強的後盾，而不是站上舞台的主角。」這是 Michelle 訪談裡反覆提到的一句話。她相信真正的領導，是讓每個人在安全感中發揮潛力，而不是把光環留給自己——這個信念，後來也成了她創辦希世代的起點。</div>
+          </details>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <hr class="rule">
 
   <!-- CTA FINAL -->
   <section>

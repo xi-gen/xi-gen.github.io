@@ -113,6 +113,28 @@
   .hero-note{margin-top:16px;font-size:13px;color:var(--ink-soft);}
   .hero-note b{color:var(--navy);}
 
+  /* HERO PHOTO (2026/10 新增) */
+  .hero-grid{
+    display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+    column-gap:48px;align-items:center;
+  }
+  .hero-grid .lede{margin-bottom:30px;}
+  .hero-grid h1{font-size:clamp(40px,5.2vw,62px);white-space:nowrap;}
+  .hero-photo{margin:0;}
+  .hero-photo img{
+    display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+    border-radius:var(--radius);border:1px solid var(--line);
+    box-shadow:0 16px 40px rgba(42,63,98,.14);
+  }
+  .hero-photo figcaption{
+    margin-top:12px;font-size:12.5px;color:var(--ink-soft);
+    display:flex;align-items:center;gap:10px;line-height:1.5;
+  }
+  .hero-photo figcaption::before{
+    content:"";flex:0 0 22px;height:1px;background:var(--gold);
+  }
+  .hero-photo figcaption b{color:var(--navy);font-weight:600;}
+
   section{padding:74px 0;}
   .section-head{max-width:640px;margin-bottom:44px;}
   .section-head h2{font-size:clamp(28px,4vw,36px);color:var(--navy);font-weight:500;margin:12px 0 10px;}
@@ -238,6 +260,7 @@
 
   @media (max-width:860px){
     .stats{grid-template-columns:1fr;}
+    .hero-grid{grid-template-columns:1fr;row-gap:28px;}
     .gen-grid{grid-template-columns:1fr;}
     .quote-block,.cta-final{padding:40px 24px;}
     nav.bar{flex-direction:column;align-items:flex-start;gap:12px;}
@@ -261,6 +284,8 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-grid">
+    <div class="hero-text">
     <div class="hero-badge eyebrow">希世代 XI Gen · 職涯教練工作坊</div>
     <h1>Career <em>Coaching</em></h1>
     <div class="tagline">20 · 30 · 40 世代引導對話—— 各自精彩</div>
@@ -272,6 +297,14 @@
       <a class="btn btn-primary" href="mailto:michelle@xi-gen.co?subject=Career Coaching 工作坊諮詢">預約工作坊諮詢 →</a>
       <a class="btn btn-ghost" href="#generations">了解三世代框架</a>
     </div>
+    </div><!-- end hero-text -->
+
+    <figure class="hero-photo">
+      <img src="wazaiii-workshop-2026-07.jpg" width="1200" height="900"
+           alt="Michelle Jian 於 Wazaiii 哇哉「酷學家計畫」社群講座與學員合影">
+      <figcaption><span><b>Wazaiii 哇哉「酷學家計畫」</b>社群講座 · 2026/7/24</span></figcaption>
+    </figure>
+    </div><!-- end hero-grid -->
 
     <div class="stats">
       <div class="stat"><div class="num">3</div><div class="label">集 Podcast 訪談<br>洞察來源</div></div>

@@ -11,6 +11,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="zh-TW" href="https://xi-gen.github.io/">
+<link rel="alternate" hreflang="en" href="https://xi-gen.github.io/en/">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -625,6 +627,18 @@
     margin-bottom: 8px;
   }
 
+
+  /* ── LANGUAGE SWITCH ── */
+  .nav-links .lang-switch {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-left: 4px; padding-left: 20px;
+    border-left: 1px solid rgba(255,255,255,0.15);
+  }
+  .nav-links .lang-switch a { text-transform: none; letter-spacing: 0.06em; }
+  .nav-links .lang-switch a.on { color: var(--gold); }
+  .lang-sep { color: rgba(255,255,255,0.25); font-size: 11px; }
+  .lang-note { font-size: 0.85em; opacity: 0.7; font-weight: 400; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .nav { padding: 14px 24px; }
@@ -647,6 +661,7 @@
     <a href="#" class="active">Homepage</a>
     <a href="oic/index.html">OIC 組織診斷</a>
     <a href="coaching/index.html">Career Coaching</a>
+    <span class="lang-switch"><a href="./" class="on" aria-current="page">中</a><span class="lang-sep">/</span><a href="en/" hreflang="en" lang="en">EN</a></span>
   </div>
 </nav>
 
@@ -708,11 +723,9 @@
       <div class="about-subtitle">共享人資長、組織與商務發展教練</div>
       <div class="about-title">希世代 XI Gen · 創辦人 · 人資實踐家</div>
       <div class="about-creds">
-        <span class="about-cred">Fractional CHRO</span>
         <span class="about-cred">PHRi</span>
         <span class="about-cred">MBA</span>
         <span class="about-cred">PMP</span>
-        <span class="about-cred">Business Coach</span>
       </div>
       <div class="about-podcasts">
         <div class="about-podcasts-label">Podcast 出場</div>
@@ -742,7 +755,7 @@
         <strong>20+ 年</strong>橫跨<strong>外商、新創、上市櫃</strong>的人資實戰歷練，累積輔導<strong> 20+ 家企業</strong>於組織、人才與營運轉型。Michelle 深知組織在不同生命週期的真實困境，從診斷到落地，從框架到陪跑——希世代 XI Gen 是她將這 20 多年淬煉出的方法，系統化帶給每一個需要的組織。
       </p>
       <p class="about-intro">
-        Michelle 過去除了人資外，亦曾帶領客服、總務及職安等不同職能。踏入創業的後職涯，「希世代」的理念在於提供創辦人、管理團隊及人資夥伴們關於組織迭代、企業發展等挑戰所需的引導與技能培訓；讓優秀品牌及企業主可以專注創新，共同打造更多元包容、允許試錯的職涯環境。
+        Michelle 過去除了人資外，亦曾帶領商務、客服、總務及職安等不同職能。踏入創業的後職涯，「希世代」的理念在於提供創辦人、管理團隊及人資夥伴們關於組織迭代、企業發展等挑戰所需的引導與技能培訓；讓優秀品牌及企業主可以專注創新，共同打造更多元包容、允許試錯的職涯環境。
       </p>
       <div class="exp-list">
         <div class="exp-item current">

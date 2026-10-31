@@ -563,6 +563,68 @@
   }
   .footer-copy { font-size: 11px; color: var(--ink-3); }
 
+
+  /* ── HERO VIDEO (2026/10 新增) ── */
+  .hero-inner.hero-grid {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    column-gap: 56px;
+    align-items: center;
+  }
+  .hero-grid .hero-cite { margin-bottom: 0; display: block; line-height: 1.7; }
+  .hero-grid .hero-cite::before { margin-right: 10px; }
+  .hero-grid .hero-stats { grid-column: 1 / -1; margin-top: 48px; }
+  .hero-video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #0F1B2E;
+    border: 1px solid rgba(201,168,76,0.25);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.35);
+  }
+  .hero-video iframe,
+  .hero-video .yt-facade { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .yt-facade { cursor: pointer; padding: 0; background: none; display: block; }
+  .yt-facade img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s, filter .4s; filter: brightness(.82); }
+  .yt-facade:hover img { transform: scale(1.03); filter: brightness(.95); }
+  .yt-play {
+    position: absolute; left: 50%; top: 50%;
+    width: 68px; height: 68px; margin: -34px 0 0 -34px;
+    border-radius: 50%;
+    background: rgba(28,28,26,0.55);
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .yt-play::after {
+    content: ''; margin-left: 5px;
+    border-style: solid; border-width: 11px 0 11px 18px;
+    border-color: transparent transparent transparent var(--gold);
+  }
+  .yt-facade:hover .yt-play { background: rgba(42,63,98,0.9); }
+  .hero-video-caption {
+    font-size: 11px; color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em; margin-top: 12px;
+  }
+  .hero-video-caption a { color: var(--gold-light); text-decoration: none; }
+
+  /* ── ABOUT 現任職務 (2026/10 新增) ── */
+  .exp-company a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(184,149,90,0.35); }
+  .exp-company a:hover { border-bottom-color: var(--gold-dim); }
+  .exp-item.current { font-size: 13px; }
+  .exp-item.current .exp-company,
+  .exp-item.current .exp-role { font-weight: 600; }
+  .about-subtitle {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .nav { padding: 14px 24px; }
@@ -571,6 +633,8 @@
     .exp-item { grid-template-columns: 1fr; gap: 4px; }
     .hero-stat { padding-right: 24px; margin-right: 24px; }
     .ulrich-left { flex: 0 0 100%; }
+    .hero-inner.hero-grid { grid-template-columns: 1fr; row-gap: 32px; }
+    .hero-grid .hero-stats { margin-top: 8px; }
   }
 </style>
 </head>
@@ -588,7 +652,8 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="hero-inner hero-grid">
+    <div class="hero-text">
     <div class="hero-eyebrow">Dave Ulrich · A Call for HR Action · 2026/3/3</div>
     <p class="hero-quote">
       "Our call for action is to encourage, even <em>require</em>, HR professionals to transform themselves to do stakeholder HR by being an architect, facilitator, exemplar, and implementer of hybrid work—disaggregating tasks, bringing human and digital agents together, and thus <em>delivering stakeholder value</em>."
@@ -597,6 +662,19 @@
       Dave Ulrich · Professor, Ross School of Business, University of Michigan ·
       <a href="https://www.linkedin.com/pulse/seven-propositions-move-ai-from-hype-hope-faster-progress-dave-ulrich-wbrjc/" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">A Call for HR Action</a>
     </div>
+    </div><!-- end hero-text -->
+
+    <!-- Hero video：點擊才載入 YouTube（縮圖先顯示畫面，不拖慢首頁） -->
+    <div>
+      <div class="hero-video">
+        <button type="button" class="yt-facade" data-yt="83KVdEZ6yFI" aria-label="播放 Michelle 節目影片">
+          <img src="https://i.ytimg.com/vi/83KVdEZ6yFI/hqdefault.jpg" alt="Michelle Jian 節目影片" loading="eager" width="480" height="360">
+          <span class="yt-play" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="hero-video-caption">▶ 節目影片 · <a href="https://www.youtube.com/watch?v=83KVdEZ6yFI" target="_blank" rel="noopener">在 YouTube 觀看</a></div>
+    </div>
+
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-num">20<span style="font-size:20px">+</span></div>
@@ -627,6 +705,7 @@
     <!-- Left -->
     <div class="about-left">
       <div class="about-name">Michelle Jian</div>
+      <div class="about-subtitle">共享人資長、組織與商務發展教練</div>
       <div class="about-title">希世代 XI Gen · 創辦人 · 人資實踐家</div>
       <div class="about-creds">
         <span class="about-cred">Fractional CHRO</span>
@@ -637,17 +716,21 @@
       </div>
       <div class="about-podcasts">
         <div class="about-podcasts-label">Podcast 出場</div>
-        <a href="https://podcasts.apple.com/tw/podcast/s2ep120-%E7%86%B1%E9%96%80%E8%A9%B1%E9%A1%8C-%E7%9F%AD%E6%9A%AB%E4%BC%91%E6%81%AF-%E6%9C%89%E6%84%8F%E7%BE%A9%E7%9A%84%E6%8E%A2%E7%B4%A2-40%E6%AD%B2%E7%9A%84-%E5%BE%8C%E8%81%B7%E6%B6%AF-%E5%BF%83%E5%A2%83%E8%88%87%E6%96%B0%E8%88%88%E5%B8%8C%E4%B8%96%E4%BB%A3-%E5%B0%88%E8%A8%AA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6/id1546960737?i=1000720569075" target="_blank" class="podcast-link">
-          Yourator．《職涯履行家》
-          <span>S2EP120 · 40 歲的「後職涯」心境與新興希世代！· 2025/8</span>
+        <a href="https://podcasts.apple.com/tw/podcast/%E8%B7%A8%E4%B8%96%E4%BB%A3%E8%8C%B6%E6%B0%B4%E9%96%93-ep-06-%E5%A6%82%E6%9E%9C%E8%81%B7%E5%A0%B4%E5%8F%AF%E4%BB%A5%E5%BE%9E%E9%A0%AD%E9%96%8B%E5%A7%8B-%E8%A8%AD%E8%A8%88%E4%BD%A0%E6%9C%9F%E5%BE%85%E7%9A%84%E8%B7%A8%E4%B8%96%E4%BB%A3%E7%90%86%E6%83%B3%E8%81%B7%E5%A0%B4/id1896855858?i=1000777902251" target="_blank" rel="noopener" class="podcast-link">
+          《跨世代茶水間》
+          <span>EP.06 · 如果職場可以從頭開始——設計你期待的跨世代理想職場 · 2026/7</span>
         </a>
-        <a href="https://podcasts.apple.com/tw/podcast/ep-185-20-30-40%E4%B8%96%E4%BB%A3%E7%9A%84%E8%81%B7%E6%B6%AF%E7%B7%B4%E7%BF%92%E9%A1%8C-%E6%92%95%E6%8E%89%E7%A4%BE%E6%9C%83%E5%8C%96%E6%A8%99%E7%B1%A4-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6-michelle/id1533395130?i=1000730204267" target="_blank" class="podcast-link">
+        <a href="https://podcasts.apple.com/tw/podcast/ep126-%E5%9C%A8%E7%B5%84%E7%B9%94%E8%AE%8A%E9%9D%A9%E4%B8%AD-%E5%A6%82%E4%BD%95%E5%B8%B6%E5%87%BA%E5%9C%98%E9%9A%8A%E6%BD%9B%E8%83%BD-%E4%BA%BA%E8%B3%87%E9%95%B7%E4%BA%8C%E5%8D%81%E5%B9%B4%E5%BF%83%E6%B3%95%E5%88%86%E4%BA%AB-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-michelle-jian/id1682939097?i=1000735468252" target="_blank" rel="noopener" class="podcast-link">
+          Hey Coach!．《教練我想問》
+          <span>EP126 · 在組織變革中，如何帶出團隊潛能 · 2025/11</span>
+        </a>
+        <a href="https://podcasts.apple.com/tw/podcast/ep-185-20-30-40%E4%B8%96%E4%BB%A3%E7%9A%84%E8%81%B7%E6%B6%AF%E7%B7%B4%E7%BF%92%E9%A1%8C-%E6%92%95%E6%8E%89%E7%A4%BE%E6%9C%83%E5%8C%96%E6%A8%99%E7%B1%A4-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6-michelle/id1533395130?i=1000730204267" target="_blank" rel="noopener" class="podcast-link">
           BetweenGos．《最近工作還好嗎》
           <span>EP185 · 20、30、40 世代的職涯練習題 · 2025/10</span>
         </a>
-        <a href="https://podcasts.apple.com/br/podcast/ep126-%E5%9C%A8%E7%B5%84%E7%B9%94%E8%AE%8A%E9%9D%A9%E4%B8%AD-%E5%A6%82%E4%BD%95%E5%B8%B6%E5%87%BA%E5%9C%98%E9%9A%8A%E6%BD%9B%E8%83%BD-%E4%BA%BA%E8%B3%87%E9%95%B7%E4%BA%8C%E5%8D%81%E5%B9%B4%E5%BF%83%E6%B3%95%E5%88%86%E4%BA%AB-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-michelle-jian/id1682939097?i=1000735468252&l=en-GB" target="_blank" class="podcast-link">
-          Hey Coach!．《教練我想問》
-          <span>EP126 · 在組織變革中，如何帶出團隊潛能 · 2025/11</span>
+        <a href="https://podcasts.apple.com/tw/podcast/s2ep120-%E7%86%B1%E9%96%80%E8%A9%B1%E9%A1%8C-%E7%9F%AD%E6%9A%AB%E4%BC%91%E6%81%AF-%E6%9C%89%E6%84%8F%E7%BE%A9%E7%9A%84%E6%8E%A2%E7%B4%A2-40%E6%AD%B2%E7%9A%84-%E5%BE%8C%E8%81%B7%E6%B6%AF-%E5%BF%83%E5%A2%83%E8%88%87%E6%96%B0%E8%88%88%E5%B8%8C%E4%B8%96%E4%BB%A3-%E5%B0%88%E8%A8%AA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6/id1546960737?i=1000720569075" target="_blank" rel="noopener" class="podcast-link">
+          Yourator．《職涯履行家》
+          <span>S2EP120 · 40 歲的「後職涯」心境與新興希世代！· 2025/8</span>
         </a>
       </div>
     </div>
@@ -656,12 +739,20 @@
     <div class="about-right">
       <p class="about-positioning">聚焦企業轉型及組織發展的人資實踐家</p>
       <p class="about-intro">
-        20 年橫跨<strong>外商、新創、上市櫃</strong>的人資實戰歷練，累積輔導<strong> 20+ 家企業</strong>於組織、人才與營運轉型。Michelle 深知組織在不同生命週期的真實困境，從診斷到落地，從框架到陪跑——希世代 XI Gen 是她將這 20 年淬煉出的方法，系統化帶給每一個需要的組織。
+        <strong>20+ 年</strong>橫跨<strong>外商、新創、上市櫃</strong>的人資實戰歷練，累積輔導<strong> 20+ 家企業</strong>於組織、人才與營運轉型。Michelle 深知組織在不同生命週期的真實困境，從診斷到落地，從框架到陪跑——希世代 XI Gen 是她將這 20 多年淬煉出的方法，系統化帶給每一個需要的組織。
       </p>
       <p class="about-intro">
         Michelle 過去除了人資外，亦曾帶領客服、總務及職安等不同職能。踏入創業的後職涯，「希世代」的理念在於提供創辦人、管理團隊及人資夥伴們關於組織迭代、企業發展等挑戰所需的引導與技能培訓；讓優秀品牌及企業主可以專注創新，共同打造更多元包容、允許試錯的職涯環境。
       </p>
       <div class="exp-list">
+        <div class="exp-item current">
+          <span class="exp-company"><a href="https://www.yourator.co/" target="_blank" rel="noopener">Yourator</a></span>
+          <span class="exp-role">數位人才媒合平台 · 董事</span>
+        </div>
+        <div class="exp-item current">
+          <span class="exp-company"><a href="https://sicglobal.net/venture-building#vp-5" target="_blank" rel="noopener">SIC</a></span>
+          <span class="exp-role">永續影響力投資 · Venture Partner</span>
+        </div>
         <div class="exp-item">
           <span class="exp-company">PChome</span>
           <span class="exp-period">2023 — 2025</span>
@@ -800,5 +891,19 @@
   <span class="footer-copy">© 2026 Michelle Jian · All rights reserved</span>
 </footer>
 
+<script>
+  // YouTube 點擊載入（facade）：首屏只載一張縮圖，點了才載入播放器
+  document.querySelectorAll('.yt-facade').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
+      f.title = 'Michelle Jian 節目影片';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      btn.replaceWith(f);
+    });
+  });
+</script>
 </body>
 </html>

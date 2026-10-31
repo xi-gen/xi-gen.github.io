@@ -639,6 +639,22 @@
   .lang-sep { color: rgba(255,255,255,0.25); font-size: 11px; }
   .lang-note { font-size: 0.85em; opacity: 0.7; font-weight: 400; }
 
+
+  /* ── 1ST ANNIVERSARY (2026/10 新增) ── */
+  .anniv { background: #fff; padding: 64px 48px; }
+  .anniv-inner { max-width: 900px; margin: 0 auto; }
+  .anniv-photo { margin: 0; }
+  .anniv-photo img {
+    display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+    border-radius: 6px; border: 1px solid var(--rule);
+  }
+  .anniv-cap {
+    margin-top: 14px; display: flex; gap: 12px; align-items: baseline;
+    font-size: 13px; color: var(--ink-3); line-height: 1.6;
+  }
+  .anniv-cap::before { content: ''; flex: 0 0 24px; height: 1px; background: var(--gold); transform: translateY(-4px); }
+  .anniv-cap b { color: var(--navy); font-weight: 500; margin-right: 6px; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .nav { padding: 14px 24px; }
@@ -647,6 +663,7 @@
     .exp-item { grid-template-columns: 1fr; gap: 4px; }
     .hero-stat { padding-right: 24px; margin-right: 24px; }
     .ulrich-left { flex: 0 0 100%; }
+    .anniv { padding-left: 24px; padding-right: 24px; }
     .hero-inner.hero-grid { grid-template-columns: 1fr; row-gap: 32px; }
     .hero-grid .hero-stats { margin-top: 8px; }
   }
@@ -881,6 +898,17 @@
   </div>
   </div><!-- end ulrich-strip-inner -->
 </div>
+
+<!-- 1ST ANNIVERSARY -->
+<section class="anniv">
+  <div class="anniv-inner">
+    <div class="section-label">一週年</div>
+    <figure class="anniv-photo">
+      <img src="xi-gen-1st-anniversary.jpg" width="1400" height="788" loading="lazy" alt="希世代一週年慶與夥伴們的大合照">
+      <figcaption class="anniv-cap"><span><b>希世代一週年</b>謝謝一路同行的你們</span></figcaption>
+    </figure>
+  </div>
+</section>
 
 <!-- CTA -->
 <div class="cta-section">

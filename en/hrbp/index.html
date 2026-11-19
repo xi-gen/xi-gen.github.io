@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HRBP Mastery · Building Strategic HRBPs | XI Gen</title>
+<meta name="description" content="Built on the seven PHRi® knowledge domains with OIC and TRP: the Playbook + CXO 7-Question Quick Check, the HRBP Mastery Bootcamp, and a 24-month development plan. XI Gen · Michelle Jian">
+<link rel="alternate" hreflang="zh-TW" href="https://xi-gen.github.io/hrbp/">
+<link rel="alternate" hreflang="en" href="https://xi-gen.github.io/en/hrbp/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2A3F62;
+    --navy-deep:#1B2C48;
+    --gold:#C9A84C;
+    --gold-soft:#E4D3A6;
+    --paper:#FAF8F4;
+    --card:#FFFFFF;
+    --ink:#20293A;
+    --ink-soft:#5B6478;
+    --line:#E4DFD4;
+    --skyblue:#4A7FA5;
+    --skyblue-soft:#E6EEF3;
+    --slate:#7E8CA0;
+    --silver:#C8D4DC;
+    --silver-soft:#F0F3F5;
+    --gold-deep:#B4913A;
+    --gold-card-soft:#F7F0DE;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans TC', sans-serif;
+    font-weight:400;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond','Noto Sans TC',serif;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;
+  }
+  .eyebrow::before{content:"";width:18px;height:1px;background:var(--gold);}
+
+  /* NAV */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,244,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.bar{
+    max-width:1080px;margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    flex-wrap:wrap;
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;
+    color:var(--navy);letter-spacing:.02em;
+  }
+  .brand span{color:var(--gold);}
+  .navlinks{display:flex;gap:26px;font-size:14px;color:var(--ink-soft);flex-wrap:wrap;}
+  .navlinks a:hover{color:var(--navy);}
+  .navlinks .current{color:var(--navy);font-weight:600;border-bottom:1.5px solid var(--gold);padding-bottom:2px;}
+
+  /* HERO */
+  .hero{padding:76px 0 56px;}
+  .hero-badge{margin-bottom:22px;}
+  .hero h1{
+    font-size:clamp(40px,7vw,68px);
+    font-weight:500;color:var(--navy);
+    margin:14px 0 6px;line-height:1.05;
+  }
+  .hero h1 em{font-style:italic;font-weight:600;color:var(--gold);}
+  .hero .tagline{
+    font-size:20px;color:var(--ink-soft);margin-bottom:26px;font-weight:400;
+  }
+  .hero .lede{
+    max-width:640px;font-size:16.5px;color:var(--ink);margin-bottom:34px;
+  }
+  .hero .lede b{color:var(--navy);}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;border-radius:999px;font-size:14.5px;font-weight:600;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--navy);color:#fff;}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(42,63,98,.25);}
+  .btn-ghost{border:1px solid var(--navy);color:var(--navy);}
+  .btn-ghost:hover{background:var(--navy);color:#fff;}
+
+  /* STAT BAR */
+  .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;margin-top:52px;
+  }
+  .stat{background:var(--card);padding:26px 22px;text-align:left;}
+  .stat .num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--navy);}
+  .stat .label{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin-top:4px;}
+  .hero-note{margin-top:16px;font-size:13px;color:var(--ink-soft);}
+  .hero-note b{color:var(--navy);}
+
+  /* HERO PHOTO (2026/10 新增) */
+  .hero-grid{
+    display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+    column-gap:48px;align-items:center;
+  }
+  .hero-grid .lede{margin-bottom:30px;}
+  .hero-grid h1{font-size:clamp(40px,5.2vw,62px);white-space:nowrap;}
+  .hero-photo{margin:0;}
+  .hero-photo img{
+    display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+    border-radius:var(--radius);border:1px solid var(--line);
+    box-shadow:0 16px 40px rgba(42,63,98,.14);
+  }
+  .hero-photo figcaption{
+    margin-top:12px;font-size:12.5px;color:var(--ink-soft);
+    display:flex;align-items:center;gap:10px;line-height:1.5;
+  }
+  .hero-photo figcaption::before{
+    content:"";flex:0 0 22px;height:1px;background:var(--gold);
+  }
+  .hero-photo figcaption b{color:var(--navy);font-weight:600;}
+
+  section{padding:74px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(28px,4vw,36px);color:var(--navy);font-weight:500;margin:12px 0 10px;}
+  .section-head h2 em{font-style:italic;color:var(--gold);font-weight:600;}
+  .section-head p{color:var(--ink-soft);font-size:15.5px;}
+
+  hr.rule{border:none;border-top:1px solid var(--line);margin:0;}
+
+  /* GENERATIONS */
+  .gen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .gen-card{
+    border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+    background:var(--card);display:flex;flex-direction:column;
+  }
+  .gen-head{padding:22px 22px 18px;}
+  .gen-head .stage{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;}
+  .gen-head h3{font-family:'Cormorant Garamond',serif;font-size:30px;margin:4px 0 2px;font-weight:600;}
+  .gen-head .sub{font-size:14px;opacity:.9;}
+
+  .gen-20 .gen-head{background:var(--skyblue);color:#fff;}
+  .gen-30 .gen-head{background:var(--slate);color:#fff;}
+  .gen-40 .gen-head{background:var(--gold-deep);color:#fff;}
+
+  .gen-body{padding:22px 22px 26px;flex:1;}
+  .gen-body ul{margin:0;padding:0;list-style:none;font-size:14px;color:var(--ink);}
+  .gen-body ul li{padding-left:18px;position:relative;margin-bottom:11px;line-height:1.6;}
+  .gen-body ul li::before{content:"▸";position:absolute;left:0;top:0;font-weight:600;}
+  .gen-20 ul li::before{color:var(--skyblue);}
+  .gen-30 ul li::before{color:var(--slate);}
+  .gen-40 ul li::before{color:var(--gold-deep);}
+
+  .gen-20{box-shadow:inset 0 3px 0 0 var(--silver);}
+  .gen-30{box-shadow:inset 0 3px 0 0 var(--skyblue);}
+  .gen-40{box-shadow:inset 0 3px 0 0 var(--silver);}
+
+  .callout{
+    margin-top:34px;background:var(--navy);color:#fff;border-radius:var(--radius);
+    padding:26px 30px;font-size:15px;line-height:1.7;
+  }
+  .callout b{color:var(--gold-soft);}
+  .callout .src{display:block;margin-top:10px;font-size:12.5px;color:rgba(255,255,255,.6);}
+
+  /* QUOTE */
+  .quote-block{
+    background:var(--navy);color:#fff;border-radius:20px;
+    padding:56px 48px;text-align:center;position:relative;overflow:hidden;
+  }
+  .quote-block::before{
+    content:"“";position:absolute;top:-10px;left:24px;font-family:'Cormorant Garamond',serif;
+    font-size:160px;color:rgba(201,168,76,.18);line-height:1;
+  }
+  .quote-block p.q{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+    font-size:clamp(22px,3.4vw,32px);max-width:720px;margin:0 auto 20px;position:relative;line-height:1.5;
+  }
+  .quote-block .who{color:var(--gold-soft);font-size:14.5px;letter-spacing:.03em;}
+
+  /* PODCAST SOURCES + FAQ (combined compact table) */
+  .pod-table{display:flex;flex-direction:column;gap:14px;}
+  .pod-row{
+    display:grid;grid-template-columns:230px 1fr;gap:18px;
+    padding-bottom:14px;border-bottom:1px solid var(--line);
+  }
+  .pod-table .pod-row:last-child{border-bottom:none;padding-bottom:0;}
+  .pod-box{
+    display:block;border:1px solid var(--line);background:var(--card);
+    border-radius:12px;padding:14px 16px;font-size:12.5px;color:var(--ink-soft);
+    align-self:start;
+  }
+  .pod-box b{display:block;color:var(--navy);font-size:13.5px;margin-bottom:3px;}
+  .pod-box:hover{border-color:var(--gold);}
+  .pod-faqs{display:flex;flex-direction:column;gap:8px;}
+
+  /* FAQ ACCORDION */
+  .faq-item{
+    border:1px solid var(--line);border-radius:10px;background:var(--card);
+    overflow:hidden;
+  }
+  .faq-item[open]{border-color:var(--gold);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:12px 16px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    font-size:14px;font-weight:600;color:var(--navy);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .q-text{flex:1;}
+  .faq-item summary .chev{
+    flex-shrink:0;width:18px;height:18px;color:var(--ink-soft);
+    transition:transform .2s ease;
+  }
+  .faq-item[open] summary .chev{transform:rotate(180deg);}
+  .faq-item .a-text{
+    padding:0 16px 16px;font-size:13.5px;color:var(--ink);line-height:1.75;
+  }
+
+  @media (max-width:720px){
+    .pod-row{grid-template-columns:1fr;}
+  }
+
+
+  /* CTA FOOTER */
+  .cta-final{
+    background:var(--navy-deep);color:#fff;border-radius:24px;
+    padding:56px 48px;text-align:center;
+  }
+  .cta-final h2{font-size:clamp(26px,4vw,38px);margin:0 0 12px;font-weight:500;}
+  .cta-final h2 em{color:var(--gold);font-style:italic;font-weight:600;}
+  .cta-final p{color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 30px;font-size:15px;}
+  .cta-final .cta-row{justify-content:center;}
+  .cta-final .btn-primary{background:var(--gold);color:var(--navy-deep);}
+  .cta-final .btn-ghost{border-color:rgba(255,255,255,.4);color:#fff;}
+  .cta-final .btn-ghost:hover{background:#fff;color:var(--navy-deep);}
+
+  footer.site{padding:44px 0 60px;font-size:13px;color:var(--ink-soft);}
+  footer.site .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding-top:24px;}
+  footer.site b{color:var(--navy);}
+
+  .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+  .tag{
+    font-size:12.5px;color:var(--ink-soft);border:1px solid var(--line);
+    border-radius:999px;padding:5px 13px;background:var(--card);
+  }
+
+  @media (max-width:860px){
+    .stats{grid-template-columns:1fr;}
+    .hero-grid{grid-template-columns:1fr;row-gap:28px;}
+    .gen-grid{grid-template-columns:1fr;}
+    .quote-block,.cta-final{padding:40px 24px;}
+    nav.bar{flex-direction:column;align-items:flex-start;gap:12px;}
+  }
+
+  /* ── 排版：避免段落最後一行只剩一個字 ── */
+  p, .lede, .a-text, .hero-desc, .section-sub, .product-desc, .stage-desc, .path-desc,
+  .principle-desc, .about-intro, figcaption, .hero-stat-label { text-wrap: pretty; }
+  h1, h2, .section-title { text-wrap: balance; }
+
+  /* ── HRBP Mastery 專頁元件（2026/11 新增）── */
+  .navlinks .lang a.on{color:var(--gold);font-weight:600;}
+  .navlinks .lang .sep{margin:0 6px;color:var(--line);}
+
+  .hero .lede{max-width:700px;}
+  .stats .num small{font-size:16px;font-weight:500;margin-left:4px;color:var(--ink-soft);}
+
+  /* 三層產品線 */
+  .line-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step;}
+  .line-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px 24px;display:flex;flex-direction:column;position:relative;
+    box-shadow:inset 0 3px 0 0 var(--navy);
+  }
+  .line-card.camp{box-shadow:inset 0 3px 0 0 var(--gold);}
+  .line-card .step{
+    font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;
+    color:var(--gold);letter-spacing:.08em;
+  }
+  .line-card .who{
+    display:inline-block;margin:10px 0 8px;font-size:12px;letter-spacing:.08em;
+    color:var(--navy);background:var(--skyblue-soft);border-radius:999px;padding:3px 11px;
+    align-self:flex-start;
+  }
+  .line-card.camp .who{background:var(--gold-card-soft);}
+  .line-card h3{font-size:24px;font-weight:600;color:var(--navy);margin:2px 0 6px;line-height:1.3;}
+  .line-card .purpose{font-size:14px;color:var(--ink-soft);margin-bottom:14px;}
+  .line-card ul{margin:0 0 16px;padding:0;list-style:none;font-size:14px;flex:1;}
+  .line-card ul li{padding-left:18px;position:relative;margin-bottom:8px;line-height:1.6;}
+  .line-card ul li::before{content:"▸";position:absolute;left:0;color:var(--gold);font-weight:600;}
+  .line-card .status{font-size:12.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:12px;}
+  .line-card .status a{color:var(--navy);border-bottom:1px solid var(--gold-soft);}
+  .flow-note{
+    margin-top:22px;font-size:14px;color:var(--ink-soft);
+    display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  }
+  .flow-note b{color:var(--navy);font-weight:600;}
+  .flow-note .arr{color:var(--gold);}
+
+  /* 教戰手冊三段式 */
+  .focus-list{display:flex;flex-direction:column;gap:14px;}
+  .focus-row{
+    display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:start;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px;
+  }
+  .focus-row .fx{font-size:12px;letter-spacing:.14em;color:var(--gold);font-weight:600;}
+  .focus-row .ft{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--navy);line-height:1.2;}
+  .focus-row p{margin:0;font-size:14.5px;}
+  .focus-row .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .focus-row.appendix{background:var(--silver-soft);}
+
+  /* 五階進程 */
+  .stages{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);}
+  .stage-box{padding:22px 16px;text-align:center;background:var(--card);border-right:1px solid var(--line);}
+  .stage-box:last-child{border-right:none;}
+  .stage-box .n{font-size:12px;letter-spacing:.12em;color:var(--ink-soft);}
+  .stage-box .en{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--navy);line-height:1.2;margin-top:4px;}
+  .stage-box .zh{font-size:14px;color:var(--ink-soft);}
+  .stage-box:nth-child(1){background:#F5F7FA;}
+  .stage-box:nth-child(2){background:#EEF2F7;}
+  .stage-box:nth-child(3){background:#E6EEF3;}
+  .stage-box:nth-child(4){background:#DCE6EE;}
+  .stage-box:nth-child(5){background:var(--navy);}
+  .stage-box:nth-child(5) .en{color:var(--gold);}
+  .stage-box:nth-child(5) .n,.stage-box:nth-child(5) .zh{color:rgba(255,255,255,.75);}
+  .module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px;}
+  .module{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;
+  }
+  .module .ab{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);line-height:1.1;}
+  .module .full{font-size:12.5px;color:var(--ink-soft);letter-spacing:.02em;}
+  .module .zh{font-size:15px;font-weight:600;color:var(--ink);margin-top:6px;}
+
+  /* 七題速測 */
+  .check{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;
+    background:var(--navy);color:#fff;border-radius:20px;padding:44px 44px;
+  }
+  .check h2{color:#fff;font-size:clamp(26px,3.6vw,34px);font-weight:500;margin:12px 0 10px;}
+  .check h2 em{color:var(--gold);font-style:italic;font-weight:600;}
+  .check .intro{color:rgba(255,255,255,.75);font-size:15px;}
+  .check .btn-primary{background:var(--gold);color:var(--navy-deep);margin-top:18px;}
+  .check ol{margin:0;padding:0;list-style:none;counter-reset:c;}
+  .check ol li{
+    counter-increment:c;position:relative;padding:14px 0 14px 44px;
+    border-bottom:1px solid rgba(255,255,255,.12);font-size:14.5px;line-height:1.65;
+  }
+  .check ol li:last-child{border-bottom:none;}
+  .check ol li::before{
+    content:counter(c,decimal-leading-zero);position:absolute;left:0;top:13px;
+    font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--gold);
+  }
+  .check ol li b{color:var(--gold-soft);font-weight:600;}
+
+  /* 24 個月培訓計畫 */
+  .timeline{position:relative;display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-bottom:34px;}
+  .timeline::before{content:"";position:absolute;left:4%;right:4%;top:21px;height:2px;background:var(--gold-soft);}
+  .ms{position:relative;text-align:center;}
+  .ms .dot{
+    width:44px;height:44px;margin:0 auto 10px;border-radius:50%;
+    background:var(--card);border:2px solid var(--navy);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;position:relative;
+  }
+  .ms:last-child .dot{background:var(--navy);color:var(--gold);}
+  .ms .t{font-size:13.5px;font-weight:600;color:var(--navy);line-height:1.45;}
+  .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .plan-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px;}
+  .plan-box h3{font-size:22px;font-weight:600;color:var(--navy);margin:0 0 8px;}
+  .plan-box p{margin:0;font-size:14px;}
+  .ratio{display:flex;height:30px;border-radius:8px;overflow:hidden;margin:12px 0 10px;font-size:12.5px;font-weight:600;}
+  .ratio span{display:flex;align-items:center;justify-content:center;color:#fff;}
+  .ratio .r70{flex:70;background:var(--navy);}
+  .ratio .r20{flex:20;background:var(--skyblue);}
+  .ratio .r10{flex:10;background:var(--gold);}
+  .plan-box .legend{font-size:12.5px;color:var(--ink-soft);}
+
+  @media (max-width:860px){
+    .line-grid,.module-grid,.plan-grid{grid-template-columns:1fr;}
+    .focus-row{grid-template-columns:1fr;gap:8px;}
+    .stages{grid-template-columns:1fr;}
+    .stage-box{border-right:none;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline;text-align:left;}
+    .check{grid-template-columns:1fr;padding:36px 24px;}
+    .timeline{grid-template-columns:repeat(4,1fr);row-gap:22px;}
+    .timeline::before{display:none;}
+  }
+
+  .lang-note{font-size:.85em;opacity:.7;font-weight:400;}
+
+  /* hero highlights v2 */
+  .stats .stat{padding:28px 26px 26px;}
+  .stats .k{font-size:12px;letter-spacing:.1em;color:var(--gold-deep);font-weight:600;margin-bottom:6px;}
+  .stats .num{font-size:44px;line-height:1.1;}
+  .stats .num small{font-size:18px;}
+  .stats .promise{font-size:16.5px;font-weight:600;color:var(--navy);line-height:1.5;margin:10px 0 6px;}
+  .stats .label{font-size:13px;}
+
+  .stage-box .d{font-size:13px;line-height:1.55;color:var(--ink-soft);margin-top:8px;}
+  .stage-box:nth-child(5) .d{color:rgba(255,255,255,.85);}
+  .module .what{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-top:8px;border-top:1px solid var(--line);padding-top:8px;}
+  @media (max-width:860px){.stage-box{flex-wrap:wrap;}.stage-box .d{flex-basis:100%;margin-top:2px;}}
+
+  @media (max-width:860px){
+    .navlinks{width:100%;gap:13px;font-size:12.5px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;}
+    .navlinks::-webkit-scrollbar{display:none;}
+    .navlinks a,.navlinks .lang{white-space:nowrap;flex:0 0 auto;}
+    .navlinks .nav-sub,.navlinks .nav-home,.navlinks .lang-note{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="bar">
+    <a class="brand" href="https://xi-gen.github.io/en/">XI Gen <span>希世代</span> · HRBP Mastery</a>
+    <div class="navlinks">
+      <a class="nav-home" href="https://xi-gen.github.io/en/">← Home</a>
+      <a href="https://xi-gen.github.io/oic/index.html">OIC <span class="lang-note">(Mandarin)</span></a>
+      <a class="current" href="#">HRBP Mastery</a>
+      <a href="https://xi-gen.github.io/coaching/index.html">Career Coaching <span class="lang-note">(Mandarin)</span></a>
+      <span class="lang"><a href="../../hrbp/" hreflang="zh-TW" lang="zh-TW">中</a><span class="sep">/</span><a class="on" href="./" aria-current="page">EN</a></span>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge eyebrow">XI Gen · Building Strategic HRBPs</div>
+    <h1>HRBP <em>Mastery</em></h1>
+    <div class="tagline">Administration to Business · Process to Strategy · Execution to Engagement</div>
+    <div class="lede">
+      <b>Turn HRBPs into real problem-solvers for the business.</b>
+      Built on the seven PHRi® knowledge domains and XI Gen's own OIC and TRP methods, HRBP Mastery takes an organization from CXOs seeing the gap, to hands-on team practice, to 24 months of in-house development — transforming HRBPs from administrative coordinators into strategic partners aligned with the leadership team's business goals.
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:michelle@xi-gen.co?subject=HRBP%20Mastery%20Inquiry">Talk to us about HRBP Mastery →</a>
+      <a class="btn btn-ghost" href="#line">See how it works</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="k">HRBP Mastery Playbook</div><div class="num">7<small>domains</small></div><div class="promise">The roadmap to strategic HRBP transformation</div><div class="label">Strategic Playbook × PHRi®</div></div>
+      <div class="stat"><div class="k">CXO 7-Question Quick Check</div><div class="num">3<small>minutes</small></div><div class="promise">Align expectations between CXO and HR Head</div><div class="label">Answer separately, then discuss the gaps first</div></div>
+      <div class="stat"><div class="k">HRBP Development Plan</div><div class="num">24<small>months</small></div><div class="promise">Accelerate HRBPs to break through and lead on their own</div><div class="label">8 milestones for in-house delivery and development checkpoints</div></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- PRODUCT LINE -->
+  <section id="line">
+    <div class="section-head">
+      <div class="eyebrow">Three Steps</div>
+      <h2>See the gap first, <em>then walk the method</em></h2>
+    </div>
+
+    <div class="line-grid">
+      <div class="line-card">
+        <div class="step">STEP 01</div>
+        <span class="who">For CXOs</span>
+        <h3>Playbook + 7-Question Quick Check</h3>
+        <div class="purpose">Reveal the gap between how HR runs today and what leadership expects.</div>
+        <ul>
+          <li>HRBP Mastery Playbook: Strategic Playbook × PHRi®</li>
+          <li>CXO 7-Question Quick Check: scan on site, about 3 minutes</li>
+          <li>Used in company proposals and demo workshops</li>
+        </ul>
+        <div class="status">Demo workshops available on request</div>
+      </div>
+
+      <div class="line-card camp">
+        <div class="step">STEP 02</div>
+        <span class="who">CXO · HR Head · HRBP</span>
+        <h3>HRBP Mastery Bootcamp</h3>
+        <div class="purpose">Bring your own company's cases and walk through the method once.</div>
+        <ul>
+          <li>Workshop format; bring a real issue</li>
+          <li>Leaders and HR align on priorities together</li>
+          <li>Leave with an action plan for your company</li>
+        </ul>
+        <div class="status">Coming soon · For registration, contact <a href="mailto:michelle@xi-gen.co?subject=HRBP%20Mastery%20Bootcamp%20Registration">XI Gen</a></div>
+      </div>
+
+      <div class="line-card">
+        <div class="step">STEP 03</div>
+        <span class="who">For HR Heads</span>
+        <h3>HRBP Development Plan</h3>
+        <div class="purpose">Run it in-house for 24 months and make HRBP capability truly take hold.</div>
+        <ul>
+          <li>Development plan deck</li>
+          <li>White paper</li>
+          <li>Competency assessment template and case examples</li>
+        </ul>
+        <div class="status">For companies implementing HRBP Mastery</div>
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="rule">
+
+  <!-- PLAYBOOK -->
+  <section id="playbook">
+    <div class="section-head">
+      <div class="eyebrow">The Playbook</div>
+      <h2>Three parts, <em>from shift to delivery</em></h2>
+      <p>Following how PHRi® has evolved, it answers the three questions leaders care about most: why the HRBP role must change, what it must become, and how to get there.</p>
+    </div>
+
+    <div class="focus-list">
+      <div class="focus-row">
+        <div><div class="fx">FOCUS 01 · WHY</div><div class="ft">The Shift</div></div>
+        <div>
+          <p>Across three iterations of PHRi® (2012 → 2018 → current), the HRBP role has shifted.</p>
+          <div class="chips"><span class="tag">Administration → Business</span><span class="tag">Management → Engagement</span><span class="tag">Intuition → Data</span></div>
+        </div>
+      </div>
+      <div class="focus-row">
+        <div><div class="fx">FOCUS 02 · WHAT</div><div class="ft">The Framework</div></div>
+        <div>
+          <p>The mindsets, methods and capabilities for a strategic seat — and the most common traps.</p>
+          <div class="chips"><span class="tag">4 Practice Principles</span><span class="tag">4-Step Organizational Transformation</span><span class="tag">4 Core Capabilities</span><span class="tag">6 Common Traps</span></div>
+        </div>
+      </div>
+      <div class="focus-row">
+        <div><div class="fx">FOCUS 03 · HOW</div><div class="ft">The Module</div></div>
+        <div>
+          <p>Five capability levels × three modules, each level tied to deliverable results.</p>
+          <div class="chips"><span class="tag">OIC</span><span class="tag">TRP</span><span class="tag">Fractional CHRO</span></div>
+        </div>
+      </div>
+      <div class="focus-row appendix">
+        <div><div class="fx">APPENDIX</div><div class="ft">Appendix</div></div>
+        <div>
+          <div class="chips" style="margin-top:0;"><span class="tag">Seven PHRi® Knowledge Domains</span><span class="tag">CXO 7-Question Quick Check</span><span class="tag">Team Certification Path</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- FIVE LEVELS × THREE MODULES -->
+  <section id="stages">
+    <div class="section-head">
+      <div class="eyebrow">Capability Path</div>
+      <h2>Five HRBP <em>capability levels</em></h2>
+      <p>From seeing and applying, to advising and aligning with leadership, to leading on their own. Each level maps to deliverable results in the three modules.</p>
+    </div>
+
+    <div class="stages">
+      <div class="stage-box"><div class="n">LEVEL 1</div><div class="en">Aware</div><div class="d">Sees how HR issues connect to the business</div></div>
+      <div class="stage-box"><div class="n">LEVEL 2</div><div class="en">Apply</div><div class="d">Handles daily issues with tools and data</div></div>
+      <div class="stage-box"><div class="n">LEVEL 3</div><div class="en">Advise</div><div class="d">Brings solutions to leaders proactively</div></div>
+      <div class="stage-box"><div class="n">LEVEL 4</div><div class="en">Align</div><div class="d">Keeps HR strategy in step with business goals</div></div>
+      <div class="stage-box"><div class="n">LEVEL 5</div><div class="en">Lead</div><div class="d">Drives organizational change on their own</div></div>
+    </div>
+
+    <div class="module-grid">
+      <div class="module"><div class="ab">OIC</div><div class="full">Organization Iteration Compass</div><div class="what">Identify the organization's life-cycle stage to define HR priorities</div></div>
+      <div class="module"><div class="ab">TRP</div><div class="full">Total Remuneration Proposal</div><div class="what">From company strategy to total remuneration design and communication</div></div>
+      <div class="module"><div class="ab">Fractional CHRO</div><div class="full">Fractional Chief HR Officer</div><div class="what">Flexibly fills the CHRO role with guidance on organizational iteration and talent strategy</div></div>
+    </div>
+  </section>
+
+  <!-- QUICK CHECK -->
+  <section id="quick-check">
+    <div class="check">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-soft);">CXO 7-Question Quick Check</div>
+        <h2>Three minutes <em>to align expectations</em></h2>
+        <p class="intro">Seven questions mapped to the seven PHRi® knowledge domains. It rates how HR runs in the company today — not any individual.</p>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeg46EsnusStMNfKG2uhZItIqxjAttTgJFypfsJW_YJ7QfGeg/viewform" target="_blank" rel="noopener">Take the 3-minute Quick Check <span class="lang-note">(Mandarin)</span> →</a>
+      </div>
+      <ol>
+        <li><b>Answer separately.</b> The CXO and the HR Head each answer without seeing the other's — about 3 minutes.</li>
+        <li><b>Discuss the gaps first.</b> Start with questions where the two scores differ by 2 or more.</li>
+        <li><b>Shared score below 3 = priority candidate.</b> Focus on just 2 domains per cycle.</li>
+      </ol>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 24-MONTH PLAN -->
+  <section id="plan">
+    <div class="section-head">
+      <div class="eyebrow">Development Plan</div>
+      <h2>24 months, <em>8 milestones</em></h2>
+      <p>Led in-house by the HR Head, from onboarding and diagnosis to HRBPs who lead on their own.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="ms"><div class="dot">M1</div><div class="t">Onboard &amp; Diagnose</div></div>
+      <div class="ms"><div class="dot">M2</div><div class="t">Talent Review</div></div>
+      <div class="ms"><div class="dot">M3</div><div class="t">Speak with Data</div></div>
+      <div class="ms"><div class="dot">M6</div><div class="t">Proposal Delivered</div></div>
+      <div class="ms"><div class="dot">M9</div><div class="t">Proposal Review</div></div>
+      <div class="ms"><div class="dot">M12</div><div class="t">Annual Retrospective</div></div>
+      <div class="ms"><div class="dot">M18</div><div class="t">Institutionalize</div></div>
+      <div class="ms"><div class="dot">M24</div><div class="t">Stand on Their Own</div></div>
+    </div>
+
+    <div class="plan-grid">
+      <div class="plan-box">
+        <h3>70-20-10 learning mix</h3>
+        <div class="ratio"><span class="r70">70</span><span class="r20">20</span><span class="r10">10</span></div>
+        <div class="legend">Hands-on projects 70 · Coaching &amp; feedback 20 · Courses 10</div>
+      </div>
+      <div class="plan-box">
+        <h3>Strategy alignment every six months</h3>
+        <p>Every six months, align the Business Plan with HR strategy, focusing on 2 knowledge domains per cycle so development follows business priorities.</p>
+      </div>
+      <div class="plan-box">
+        <h3>Competency assessment</h3>
+        <p>A Competency Matrix of five competencies × L1–L5, rated level by level; evidence is required from L3 up.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- CTA FINAL -->
+  <section>
+    <div class="cta-final">
+      <div class="eyebrow" style="color:var(--gold-soft);">HRBP Mastery Bootcamp · Coming soon</div>
+      <h2>Make your HRBPs <em>business partners</em></h2>
+      <p>Bootcamp registration details are coming soon. To learn about the Playbook, the Quick Check or implementing HRBP Mastery in your company, contact XI Gen.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:michelle@xi-gen.co?subject=HRBP%20Mastery%20Bootcamp%20Registration">Ask about the Bootcamp →</a>
+        <a class="btn btn-ghost" href="https://xi-gen.github.io/oic/index.html">Explore OIC (Mandarin)</a>
+      </div>
+      <div class="badge-row" style="justify-content:center;">
+        <span class="tag">Seven PHRi® Domains</span>
+        <span class="tag">OIC</span>
+        <span class="tag">TRP</span>
+        <span class="tag">Fractional CHRO</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-row">
+    <div><b>Michelle Jian · XI Gen 希世代</b><br>michelle@xi-gen.co · <a href="https://www.linkedin.com/in/michelle-jian-32b8506b">LinkedIn</a></div>
+    <div>XI Gen · HRBP Mastery © 2026 Michelle Jian · All rights reserved</div>
+  </div>
+</footer>
+</body>
+</html>

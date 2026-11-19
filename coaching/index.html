@@ -270,6 +270,13 @@
   p, .lede, .a-text, .hero-desc, .section-sub, .product-desc, .stage-desc, .path-desc,
   .principle-desc, .about-intro, figcaption, .hero-stat-label { text-wrap: pretty; }
   h1, h2, .section-title { text-wrap: balance; }
+
+  @media (max-width:860px){
+    .navlinks{width:100%;gap:13px;font-size:12.5px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;}
+    .navlinks::-webkit-scrollbar{display:none;}
+    .navlinks a,.navlinks .lang{white-space:nowrap;flex:0 0 auto;}
+    .navlinks .nav-sub,.navlinks .nav-home{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -278,8 +285,8 @@
   <nav class="bar">
     <a class="brand" href="https://xi-gen.github.io">希世代 <span>XI Gen</span> · Career Coaching</a>
     <div class="navlinks">
-      <a href="https://xi-gen.github.io">← 回首頁</a>
-      <a href="https://xi-gen.github.io/oic/index.html">OIC 組織診斷</a>
+      <a class="nav-home" href="https://xi-gen.github.io">← 回首頁</a>
+      <a href="https://xi-gen.github.io/oic/index.html">OIC<span class="nav-sub"> 組織診斷</span></a>
       <a href="https://xi-gen.github.io/hrbp/index.html">HRBP Mastery</a>
       <a class="current" href="#">Career Coaching</a>
     </div>
@@ -479,7 +486,7 @@
       <p>不論你正走在 20、30 還是 40 世代，這場工作坊都會給你一組屬於自己的教練式提問——以及一個帶得走的行動承諾。</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="mailto:michelle@xi-gen.co?subject=Career Coaching 工作坊諮詢">預先登記 / 洽談企業包班 →</a>
-        <a class="btn btn-ghost" href="https://xi-gen.github.io/oic/index.html">了解 OIC 組織診斷</a>
+        <a class="btn btn-ghost" href="https://xi-gen.github.io/oic/index.html">了解 OIC<span class="nav-sub"> 組織診斷</span></a>
       </div>
       <div class="badge-row" style="justify-content:center;">
         <span class="tag">20s 探索期</span>

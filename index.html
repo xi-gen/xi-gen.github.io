@@ -658,6 +658,11 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .nav { padding: 14px 24px; }
+    .nav-links { width: 100%; gap: 12px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { white-space: nowrap; flex: 0 0 auto; letter-spacing: 0.03em; }
+    .nav-links .lang-switch { padding-left: 14px; margin-left: 0; flex: 0 0 auto; }
+    .nav-sub, .nav-home { display: none; }
     .hero, .section, .ulrich-strip, .cta-section, .footer { padding-left: 24px; padding-right: 24px; }
     .about-grid { grid-template-columns: 1fr; gap: 32px; }
     .exp-item { grid-template-columns: 1fr; gap: 4px; }
@@ -680,8 +685,8 @@
 <nav class="nav">
   <a href="#" class="nav-brand"><span>希世代</span> XI Gen</a>
   <div class="nav-links">
-    <a href="#" class="active">Homepage</a>
-    <a href="oic/index.html">OIC 組織診斷</a>
+    <a href="#" class="active nav-home">Homepage</a>
+    <a href="oic/index.html">OIC<span class="nav-sub"> 組織診斷</span></a>
     <a href="hrbp/index.html">HRBP Mastery</a>
     <a href="coaching/index.html">Career Coaching</a>
     <span class="lang-switch"><a href="./" class="on" aria-current="page">中</a><span class="lang-sep">/</span><a href="en/" hreflang="en" lang="en">EN</a></span>
@@ -827,7 +832,7 @@
       <div class="product-tag flagship">旗艦產品</div>
       <span class="product-icon">🧭</span>
       <div class="product-name">OIC</div>
-      <div class="product-name-zh">Organization Iteration Compass · 組織迭代指南</div>
+      <div class="product-name-zh">Organization Iteration Compass<br>組織迭代指南</div>
       <p class="product-desc">五個組織生命週期 × 15 組引導對話 × Dave Ulrich 四大 Pivot 整合。讓 CXO 在診斷現場真正「看見」組織的真實位置，帶著行動回去。</p>
       <div class="product-tags">
         <span class="product-chip">Leader Path</span>

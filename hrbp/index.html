@@ -413,6 +413,13 @@
   .stage-box:nth-child(5) .d{color:rgba(255,255,255,.85);}
   .module .what{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-top:8px;border-top:1px solid var(--line);padding-top:8px;}
   @media (max-width:860px){.stage-box{flex-wrap:wrap;}.stage-box .d{flex-basis:100%;margin-top:2px;}}
+
+  @media (max-width:860px){
+    .navlinks{width:100%;gap:13px;font-size:12.5px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;}
+    .navlinks::-webkit-scrollbar{display:none;}
+    .navlinks a,.navlinks .lang{white-space:nowrap;flex:0 0 auto;}
+    .navlinks .nav-sub,.navlinks .nav-home{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -421,8 +428,8 @@
   <nav class="bar">
     <a class="brand" href="https://xi-gen.github.io">希世代 <span>XI Gen</span> · HRBP Mastery</a>
     <div class="navlinks">
-      <a href="https://xi-gen.github.io">← 回首頁</a>
-      <a href="https://xi-gen.github.io/oic/index.html">OIC 組織診斷</a>
+      <a class="nav-home" href="https://xi-gen.github.io">← 回首頁</a>
+      <a href="https://xi-gen.github.io/oic/index.html">OIC<span class="nav-sub"> 組織診斷</span></a>
       <a class="current" href="#">HRBP Mastery</a>
       <a href="https://xi-gen.github.io/coaching/index.html">Career Coaching</a>
     </div>
@@ -635,7 +642,7 @@
       <p>實戰營報名資訊即將公布。想先了解教戰手冊、七題速測或企業導入，歡迎來信洽詢 希世代 XI Gen。</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="mailto:michelle@xi-gen.co?subject=HRBP Mastery 實戰營報名">洽詢實戰營報名 →</a>
-        <a class="btn btn-ghost" href="https://xi-gen.github.io/oic/index.html">了解 OIC 組織診斷</a>
+        <a class="btn btn-ghost" href="https://xi-gen.github.io/oic/index.html">了解 OIC<span class="nav-sub"> 組織診斷</span></a>
       </div>
       <div class="badge-row" style="justify-content:center;">
         <span class="tag">PHRi® 七大知識域</span>

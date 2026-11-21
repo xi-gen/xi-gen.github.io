@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>XI Gen · Your Next Talent Solutions · Michelle Jian</title>
-<meta name="description" content="XI Gen (希世代) is an HR consultancy focused on business transformation and organization development. Fractional CHRO · OIC · HRBP Mastery · Leadership Readiness · Career Coaching. Michelle Jian · PHRi · MBA · PMP">
+<title>希世代 XI Gen · Your Next Talent Solutions · Michelle Jian</title>
+<meta name="description" content="希世代 XI Gen——聚焦企業轉型與組織發展的人資顧問品牌。Fractional CHRO · OIC · HRBP Mastery · Leadership Readiness · Career Coaching。Michelle Jian · PHRi · MBA · PMP">
 <meta name="author" content="Michelle Jian · 希世代 XI Gen">
-<meta property="og:title" content="XI Gen · Your Next Talent Solutions">
-<meta property="og:description" content="20+ years of HR leadership × organizational diagnosis × leadership development. Michelle Jian, HR practitioner focused on business transformation.">
+<meta property="og:title" content="希世代 XI Gen · Your Next Talent Solutions">
+<meta property="og:description" content="20年人資實戰 × 組織診斷 × 領導力培育。聚焦企業轉型的人資實踐家 Michelle Jian。">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_TW">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="alternate" hreflang="zh-TW" href="https://xi-gen.github.io/">
 <link rel="alternate" hreflang="en" href="https://xi-gen.github.io/en/">
@@ -639,11 +639,6 @@
   .lang-sep { color: rgba(255,255,255,0.25); font-size: 11px; }
   .lang-note { font-size: 0.85em; opacity: 0.7; font-weight: 400; }
 
-  /* ── ENGLISH TYPOGRAPHY: no single-word last lines ── */
-  p, .product-desc, .hero-stat-label, .podcast-link span { text-wrap: pretty; }
-  .section-title, .about-positioning, .about-subtitle { text-wrap: balance; }
-  .cta-section p { max-width: 600px; }
-
 
   /* ── 1ST ANNIVERSARY (2026/10 新增) ── */
   .anniv { background: #fff; padding: 64px 48px; }
@@ -663,6 +658,11 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .nav { padding: 14px 24px; }
+    .nav-links { width: 100%; gap: 12px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { white-space: nowrap; flex: 0 0 auto; letter-spacing: 0.03em; }
+    .nav-links .lang-switch { padding-left: 14px; margin-left: 0; flex: 0 0 auto; }
+    .nav-sub, .nav-home { display: none; }
     .hero, .section, .ulrich-strip, .cta-section, .footer { padding-left: 24px; padding-right: 24px; }
     .about-grid { grid-template-columns: 1fr; gap: 32px; }
     .exp-item { grid-template-columns: 1fr; gap: 4px; }
@@ -671,21 +671,25 @@
     .anniv { padding-left: 24px; padding-right: 24px; }
     .hero-inner.hero-grid { grid-template-columns: 1fr; row-gap: 32px; }
     .hero-grid .hero-stats { margin-top: 8px; }
-    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; row-gap: 24px; column-gap: 16px; }
-    .hero-stat { border-right: none; margin-right: 0; padding-right: 0; }
   }
+
+  /* ── 排版：避免段落最後一行只剩一個字 ── */
+  p, .lede, .a-text, .hero-desc, .section-sub, .product-desc, .stage-desc, .path-desc,
+  .principle-desc, .about-intro, figcaption, .hero-stat-label { text-wrap: pretty; }
+  h1, h2, .section-title { text-wrap: balance; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="./" class="nav-brand"><span>希世代</span> XI Gen</a>
+  <a href="#" class="nav-brand"><span>希世代</span> XI Gen</a>
   <div class="nav-links">
-    <a href="./" class="active">Home</a>
-    <a href="#offerings">Offerings</a>
-    <a href="#about">About</a>
-    <span class="lang-switch"><a href="../" hreflang="zh-TW" lang="zh-TW">中</a><span class="lang-sep">/</span><a href="./" class="on" aria-current="page">EN</a></span>
+    <a href="#" class="active nav-home">Homepage</a>
+    <a href="oic/index.html">OIC<span class="nav-sub"> 組織診斷</span></a>
+    <a href="hrbp/index.html">HRBP Mastery</a>
+    <a href="coaching/index.html">Career Coaching</a>
+    <span class="lang-switch"><a href="./" class="on" aria-current="page">中</a><span class="lang-sep">/</span><a href="en/" hreflang="en" lang="en">EN</a></span>
   </div>
 </nav>
 
@@ -699,37 +703,37 @@
     </p>
     <div class="hero-cite">
       Dave Ulrich · Professor, Ross School of Business, University of Michigan ·
-      <a href="https://www.linkedin.com/pulse/seven-propositions-move-ai-from-hype-hope-faster-progress-dave-ulrich-wbrjc/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.35);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">A Call for HR Action</a>
+      <a href="https://www.linkedin.com/pulse/seven-propositions-move-ai-from-hype-hope-faster-progress-dave-ulrich-wbrjc/" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">A Call for HR Action</a>
     </div>
     </div><!-- end hero-text -->
 
-    <!-- Hero video: thumbnail first, YouTube loads on click -->
+    <!-- Hero video：點擊才載入 YouTube（縮圖先顯示畫面，不拖慢首頁） -->
     <div>
       <div class="hero-video">
-        <button type="button" class="yt-facade" data-yt="83KVdEZ6yFI" aria-label="Play video featuring Michelle Jian">
-          <img src="https://i.ytimg.com/vi/83KVdEZ6yFI/hqdefault.jpg" alt="Video featuring Michelle Jian" loading="eager" width="480" height="360">
+        <button type="button" class="yt-facade" data-yt="83KVdEZ6yFI" aria-label="播放 Michelle 節目影片">
+          <img src="https://i.ytimg.com/vi/83KVdEZ6yFI/hqdefault.jpg" alt="Michelle Jian 節目影片" loading="eager" width="480" height="360">
           <span class="yt-play" aria-hidden="true"></span>
         </button>
       </div>
-      <div class="hero-video-caption">▶ Featured interview (Mandarin) · <a href="https://www.youtube.com/watch?v=83KVdEZ6yFI" target="_blank" rel="noopener">Watch on YouTube</a></div>
+      <div class="hero-video-caption">▶ 節目影片 · <a href="https://www.youtube.com/watch?v=83KVdEZ6yFI" target="_blank" rel="noopener">在 YouTube 觀看</a></div>
     </div>
 
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-num">20<span style="font-size:20px">+</span></div>
-        <div class="hero-stat-label">Years in HR leadership<br>MNCs · Startups&nbsp;·&nbsp;Listed&nbsp;cos.</div>
+        <div class="hero-stat-label">年人資實戰<br>外商 · 新創 · 上市櫃</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">20<span style="font-size:20px">+</span></div>
-        <div class="hero-stat-label">Companies advised<br>Organization · Talent&nbsp;·&nbsp;Ops</div>
+        <div class="hero-stat-label">輔導企業<br>組織 · 人才 · 營運</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">4</div>
-        <div class="hero-stat-label">Core offerings<br>Modular &amp; focused</div>
+        <div class="hero-stat-label">核心產品線<br>模組化精準引導</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">PHRi</div>
-        <div class="hero-stat-label">First APAC certified cohort<br>MBA · PMP</div>
+        <div class="hero-stat-label">亞太區首梯認證<br>MBA · PMP</div>
       </div>
     </div>
   </div>
@@ -738,57 +742,57 @@
 <!-- ABOUT -->
 <section class="section about" id="about">
   <div class="section-inner">
-  <div class="section-label">About Michelle</div>
+  <div class="section-label">關於 Michelle</div>
   <div class="about-grid">
 
     <!-- Left -->
     <div class="about-left">
       <div class="about-name">Michelle Jian</div>
-      <div class="about-subtitle">Fractional CHRO · Organization &amp; Business Coach</div>
-      <div class="about-title">Founder, XI Gen 希世代 · HR Practitioner</div>
+      <div class="about-subtitle">共享人資長、組織與商務發展教練</div>
+      <div class="about-title">希世代 XI Gen · 創辦人 · 人資實踐家</div>
       <div class="about-creds">
         <span class="about-cred">PHRi</span>
         <span class="about-cred">MBA</span>
         <span class="about-cred">PMP</span>
       </div>
       <div class="about-podcasts">
-        <div class="about-podcasts-label">Podcast appearances · in Mandarin</div>
+        <div class="about-podcasts-label">Podcast 出場</div>
         <a href="https://podcasts.apple.com/tw/podcast/%E8%B7%A8%E4%B8%96%E4%BB%A3%E8%8C%B6%E6%B0%B4%E9%96%93-ep-06-%E5%A6%82%E6%9E%9C%E8%81%B7%E5%A0%B4%E5%8F%AF%E4%BB%A5%E5%BE%9E%E9%A0%AD%E9%96%8B%E5%A7%8B-%E8%A8%AD%E8%A8%88%E4%BD%A0%E6%9C%9F%E5%BE%85%E7%9A%84%E8%B7%A8%E4%B8%96%E4%BB%A3%E7%90%86%E6%83%B3%E8%81%B7%E5%A0%B4/id1896855858?i=1000777902251" target="_blank" rel="noopener" class="podcast-link">
           《跨世代茶水間》
-          <span>EP.06 · Designing ideal cross-generational workplace&nbsp;·&nbsp;2026/7</span>
+          <span>EP.06 · 如果職場可以從頭開始——設計你期待的跨世代理想職場 · 2026/7</span>
         </a>
         <a href="https://podcasts.apple.com/tw/podcast/ep126-%E5%9C%A8%E7%B5%84%E7%B9%94%E8%AE%8A%E9%9D%A9%E4%B8%AD-%E5%A6%82%E4%BD%95%E5%B8%B6%E5%87%BA%E5%9C%98%E9%9A%8A%E6%BD%9B%E8%83%BD-%E4%BA%BA%E8%B3%87%E9%95%B7%E4%BA%8C%E5%8D%81%E5%B9%B4%E5%BF%83%E6%B3%95%E5%88%86%E4%BA%AB-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-michelle-jian/id1682939097?i=1000735468252" target="_blank" rel="noopener" class="podcast-link">
           Hey Coach!．《教練我想問》
-          <span>EP126 · Unleashing team potential through organizational change&nbsp;·&nbsp;2025/11</span>
+          <span>EP126 · 在組織變革中，如何帶出團隊潛能 · 2025/11</span>
         </a>
         <a href="https://podcasts.apple.com/tw/podcast/ep-185-20-30-40%E4%B8%96%E4%BB%A3%E7%9A%84%E8%81%B7%E6%B6%AF%E7%B7%B4%E7%BF%92%E9%A1%8C-%E6%92%95%E6%8E%89%E7%A4%BE%E6%9C%83%E5%8C%96%E6%A8%99%E7%B1%A4-ft-%E5%B8%8C%E4%B8%96%E4%BB%A3%E5%89%B5%E8%BE%A6%E4%BA%BA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6-michelle/id1533395130?i=1000730204267" target="_blank" rel="noopener" class="podcast-link">
           BetweenGos．《最近工作還好嗎》
-          <span>EP185 · 20s, 30s and 40s career exercises&nbsp;·&nbsp;2025/10</span>
+          <span>EP185 · 20、30、40 世代的職涯練習題 · 2025/10</span>
         </a>
         <a href="https://podcasts.apple.com/tw/podcast/s2ep120-%E7%86%B1%E9%96%80%E8%A9%B1%E9%A1%8C-%E7%9F%AD%E6%9A%AB%E4%BC%91%E6%81%AF-%E6%9C%89%E6%84%8F%E7%BE%A9%E7%9A%84%E6%8E%A2%E7%B4%A2-40%E6%AD%B2%E7%9A%84-%E5%BE%8C%E8%81%B7%E6%B6%AF-%E5%BF%83%E5%A2%83%E8%88%87%E6%96%B0%E8%88%88%E5%B8%8C%E4%B8%96%E4%BB%A3-%E5%B0%88%E8%A8%AA-%E4%BA%BA%E8%B3%87%E5%AF%A6%E8%B8%90%E5%AE%B6/id1546960737?i=1000720569075" target="_blank" rel="noopener" class="podcast-link">
           Yourator．《職涯履行家》
-          <span>S2EP120 · Birth of XI Gen as "Second Career"&nbsp;·&nbsp;2025/8</span>
+          <span>S2EP120 · 40 歲的「後職涯」心境與新興希世代！· 2025/8</span>
         </a>
       </div>
     </div>
 
     <!-- Right -->
     <div class="about-right">
-      <p class="about-positioning">An HR practitioner focused on business transformation and organization&nbsp;iteration</p>
+      <p class="about-positioning">聚焦企業轉型及組織發展的人資實踐家</p>
       <p class="about-intro">
-        <strong>20+ years</strong> of hands-on HR leadership across <strong>multinationals, startups and listed companies</strong>, guiding <strong>20+ companies</strong> through organizational, talent and operational transformation. Michelle knows the real challenges organizations face at every stage of their lifecycle — from diagnosis to execution, from frameworks to hands-on support. XI Gen is how she brings two decades of refined methods to every organization that needs them.
+        <strong>20+ 年</strong>橫跨<strong>外商、新創、上市櫃</strong>的人資實戰歷練，累積輔導<strong> 20+ 家企業</strong>於組織、人才與營運轉型。Michelle 深知組織在不同生命週期的真實困境，從診斷到落地，從框架到陪跑——希世代 XI Gen 是她將這 20 多年淬煉出的方法，系統化帶給每一個需要的組織。
       </p>
       <p class="about-intro">
-        Beyond HR, Michelle has also led BD, CS, GA and OSH teams. XI Gen equips founders, leadership teams and HR partners with the facilitation and skills to navigate organizational iteration and business growth — so great brands can focus on innovation and build more diverse, inclusive workplaces where people dare to&nbsp;fail.
+        Michelle 過去除了人資外，亦曾帶領商務、客服、總務及職安等不同職能。踏入創業的後職涯，「希世代」的理念在於提供創辦人、管理團隊及人資夥伴們關於組織迭代、企業發展等挑戰所需的引導與技能培訓；讓優秀品牌及企業主可以專注創新，共同打造更多元包容、允許試錯的職涯環境。
       </p>
       <div class="exp-list">
         <div class="exp-item current">
           <span class="exp-company"><a href="https://www.yourator.co/" target="_blank" rel="noopener">Yourator</a></span>
-          <span class="exp-role">Digital Career Platform · Board Member</span>
+          <span class="exp-role">數位人才媒合平台 · 董事</span>
         </div>
         <div class="exp-item current">
           <span class="exp-company"><a href="https://sicglobal.net/venture-building#vp-5" target="_blank" rel="noopener">SIC</a></span>
-          <span class="exp-role">Sustainable Impact Capital · Venture Partner</span>
+          <span class="exp-role">永續影響力投資 · Venture Partner</span>
         </div>
         <div class="exp-item">
           <span class="exp-company">PChome</span>
@@ -798,7 +802,7 @@
         <div class="exp-item">
           <span class="exp-company">GoFreight</span>
           <span class="exp-period">2022 — 2023</span>
-          <span class="exp-role">Head of People &amp; Culture</span>
+          <span class="exp-role">Head of People & Culture</span>
         </div>
         <div class="exp-item">
           <span class="exp-company">Pinkoi</span>
@@ -814,69 +818,73 @@
 
 <hr class="divider">
 
-<!-- OFFERINGS -->
-<section class="section products" id="offerings">
+<!-- PRODUCTS -->
+<section class="section products" id="products">
   <div class="section-inner">
-  <div class="section-label">4 Core Offerings</div>
-  <h2 class="section-title">Modular, Focused Facilitation</h2>
-  <p class="section-sub">Every offering was forged in real organizations — not academic theory, but frameworks and tools you can use&nbsp;tomorrow.</p>
+  <div class="section-label">4 核心產品線</div>
+  <h2 class="section-title">模組化精準引導</h2>
+  <p class="section-sub">每條產品線都源自真實組織現場的淬煉，不是學術理論，而是明天就能用的框架與工具。</p>
 
   <div class="products-grid">
 
+    <!-- OIC - Featured -->
     <div class="product-card featured">
-      <div class="product-tag flagship">Flagship</div>
+      <div class="product-tag flagship">旗艦產品</div>
       <span class="product-icon">🧭</span>
       <div class="product-name">OIC</div>
-      <div class="product-name-zh">Organization Iteration Compass</div>
-      <p class="product-desc">5 organizational lifecycle stages × 15 facilitated dialogues × Dave Ulrich's four HR pivots. Helps CXOs see where their organization truly stands — and leave with clear&nbsp;actions.</p>
+      <div class="product-name-zh">Organization Iteration Compass<br>組織迭代指南</div>
+      <p class="product-desc">五個組織生命週期 × 15 組引導對話 × Dave Ulrich 四大 Pivot 整合。讓 CXO 在診斷現場真正「看見」組織的真實位置，帶著行動回去。</p>
       <div class="product-tags">
         <span class="product-chip">Leader Path</span>
         <span class="product-chip">HR Pro Path</span>
         <span class="product-chip">Fractional CHRO</span>
       </div>
-      <a href="../oic/en/" class="product-cta">→ Explore OIC</a>
+      <a href="oic/index.html" class="product-cta">→ 了解 OIC 產品線</a>
     </div>
 
+    <!-- HRBP Mastery -->
     <div class="product-card">
-      <div class="product-tag">HR Professionals</div>
+      <div class="product-tag">人資專業</div>
       <span class="product-icon">📊</span>
       <div class="product-name">HRBP Mastery</div>
-      <div class="product-name-zh">Playbook · Bootcamp · Development Plan</div>
-      <p class="product-desc">The full path from administrative coordinator to strategic partner. Built on the seven PHRi® knowledge domains with OIC and TRP: leaders see the gap with a 7-question quick check, walk the method with their own cases at the Bootcamp, then run a 24-month development&nbsp;plan.</p>
+      <div class="product-name-zh">教戰手冊 · 實戰營 · 培訓計畫</div>
+      <p class="product-desc">從行政協調者到策略夥伴的完整路徑。以 PHRi® 七大知識域為骨架，結合 OIC 與 TRP 方法：CXO 先用七題速測看見落差，再到實戰營用自己公司的案例走一次，回公司以 24 個月培訓計畫落地。</p>
       <div class="product-tags">
-        <span class="product-chip navy">For CXOs</span>
-        <span class="product-chip navy">For HR Heads</span>
-        <span class="product-chip navy">Quick Check</span>
+        <span class="product-chip navy">For CXO</span>
+        <span class="product-chip navy">For HR Head</span>
+        <span class="product-chip navy">七題速測</span>
       </div>
-      <a href="hrbp/" class="product-cta">→ Explore HRBP Mastery</a>
+      <a href="hrbp/index.html" class="product-cta">→ 了解 HRBP Mastery</a>
     </div>
 
+    <!-- Leadership Readiness -->
     <div class="product-card">
-      <div class="product-tag">Leadership Development</div>
+      <div class="product-tag">領導力發展</div>
       <span class="product-icon">🌐</span>
       <div class="product-name">Leadership Readiness</div>
-      <div class="product-name-zh">Leadership Readiness Handbook</div>
-      <p class="product-desc">Built on leading global consulting frameworks — from career purpose to a designed 90-day experience journey — helping new and seasoned managers prepare for leadership&nbsp;systematically.</p>
+      <div class="product-name-zh">領導力準備手冊</div>
+      <p class="product-desc">整合國際知名管顧框架，從職涯目的出發到設計 90 天體驗旅程，幫助新任與資深主管建立系統化的領導力準備。</p>
       <div class="product-tags">
-        <span class="product-chip navy">New Managers</span>
-        <span class="product-chip navy">Global Mindset</span>
+        <span class="product-chip navy">新任主管</span>
+        <span class="product-chip navy">全球思維</span>
         <span class="product-chip navy">70-20-10</span>
       </div>
-      <a href="mailto:michelle@xi-gen.co?subject=Leadership%20Readiness%20Inquiry" class="product-cta coming">Coming soon · Pre-register →</a>
+      <a href="mailto:michelle@xi-gen.co?subject=Leadership Readiness 課程諮詢" class="product-cta coming">即將推出 · 預先登記 →</a>
     </div>
 
+    <!-- Career Coaching -->
     <div class="product-card">
-      <div class="product-tag">Career Coaching</div>
+      <div class="product-tag">職涯教練</div>
       <span class="product-icon">🪄</span>
       <div class="product-name">Career Coaching</div>
-      <div class="product-name-zh">Cross-Generational Coaching Workshop</div>
-      <p class="product-desc">Coaching workshops for people in their 20s, 30s and 40s. Understand people before driving change; know yourself before planning your career. Small, interactive groups — leave with your own action&nbsp;commitment.</p>
+      <div class="product-name-zh">職涯教練工作坊</div>
+      <p class="product-desc">20 / 30 / 40 世代各自精彩的教練引導工作坊。先理解人，再推動改變；先認識自己，再規劃職涯。小班互動，帶走一個屬於自己的行動承諾。</p>
       <div class="product-tags">
-        <span class="product-chip">20s Explore</span>
-        <span class="product-chip">30s Define</span>
-        <span class="product-chip">40s Deepen</span>
+        <span class="product-chip">20s 探索期</span>
+        <span class="product-chip">30s 定向期</span>
+        <span class="product-chip">40s 深化期</span>
       </div>
-      <a href="../coaching/index.html" class="product-cta">→ Explore Career Coaching <span class="lang-note">(Mandarin)</span></a>
+      <a href="coaching/index.html" class="product-cta">→ 了解 Career Coaching 工作坊</a>
     </div>
 
   </div><!-- end products-grid -->
@@ -887,15 +895,15 @@
   <div class="ulrich-left">
     <div class="ulrich-stamp">
       Dave Ulrich<br>
-      Father of<br>Modern HR<br>
+      現代人力<br>資源之父<br>
       · 2026 ·
     </div>
   </div>
   <div class="ulrich-right">
-    <p class="ulrich-quote">"The 5 stage life cycle and the ideas in Age of HR look like they complement each&nbsp;other."</p>
+    <p class="ulrich-quote">"The 5 stage life cycle and the ideas in Age of HR look like they complement each other."</p>
     <p class="ulrich-attr">
       — Dave Ulrich · Professor, Ross School of Business · Author,
-      <a href="https://centerforexecutivesuccession.com/publications/age-of-hr/" target="_blank" rel="noopener">The Age of HR</a>
+      <a href="https://centerforexecutivesuccession.com/publications/age-of-hr/" target="_blank">The Age of HR</a>
       · LinkedIn DM, 2026
     </p>
   </div>
@@ -905,43 +913,43 @@
 <!-- 1ST ANNIVERSARY -->
 <section class="anniv">
   <div class="anniv-inner">
-    <div class="section-label">Year One</div>
+    <div class="section-label">一週年</div>
     <figure class="anniv-photo">
-      <img src="../xi-gen-1st-anniversary.jpg" width="1400" height="788" loading="lazy" alt="XI Gen first anniversary group photo with friends and partners">
-      <figcaption class="anniv-cap"><span><b>XI Gen turns one</b>Thank you for walking with us</span></figcaption>
+      <img src="xi-gen-1st-anniversary.jpg" width="1400" height="788" loading="lazy" alt="希世代一週年慶與夥伴們的大合照">
+      <figcaption class="anniv-cap"><span><b>希世代一週年</b>謝謝一路同行的你們</span></figcaption>
     </figure>
   </div>
 </section>
 
 <!-- CTA -->
 <div class="cta-section">
-  <div class="section-label" style="justify-content:center; margin-bottom:16px;">Let's Talk</div>
-  <h2 class="section-title">Where is your organization in its lifecycle?</h2>
-  <p>Curious how OIC could work in your organization, or which offering fits you best?<br>Talk with Michelle directly about where your organization stands today.</p>
+  <div class="section-label" style="justify-content:center; margin-bottom:16px;">開始對話</div>
+  <h2 class="section-title">你的組織，現在在哪個週期？</h2>
+  <p>想了解 OIC 如何在你的場域落地，或探索最適合你的產品路徑？<br>歡迎與 Michelle 直接聊聊你的組織現況。</p>
   <div class="cta-row">
-    <a href="mailto:michelle@xi-gen.co?subject=XI%20Gen%20Consultation" class="btn-primary">Book a free 30-min consultation</a>
-    <a href="../oic/en/" class="btn-secondary">Explore OIC</a>
+    <a href="mailto:michelle@xi-gen.co?subject=希世代 XI Gen 諮詢" class="btn-primary">預約免費 30 分鐘諮詢</a>
+    <a href="oic/index.html" class="btn-secondary">了解 OIC 產品線</a>
   </div>
   <div class="cta-contact">
-    <strong>Michelle Jian · XI Gen 希世代</strong><br>
+    <strong>Michelle Jian · 希世代 XI Gen</strong><br>
     <a href="mailto:michelle@xi-gen.co">michelle@xi-gen.co</a> ·
-    <a href="https://www.linkedin.com/in/michelle-jian-32b8506b" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/michelle-jian-32b8506b" target="_blank">LinkedIn</a>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <span class="footer-brand">XI Gen 希世代 · Your Next Talent Solutions</span>
+  <span class="footer-brand">希世代 XI Gen · Your Next Talent Solutions</span>
   <span class="footer-copy">© 2026 Michelle Jian · All rights reserved</span>
 </footer>
 
 <script>
-  // YouTube facade: load the player only on click
+  // YouTube 點擊載入（facade）：首屏只載一張縮圖，點了才載入播放器
   document.querySelectorAll('.yt-facade').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var f = document.createElement('iframe');
       f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
-      f.title = 'Video featuring Michelle Jian';
+      f.title = 'Michelle Jian 節目影片';
       f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       f.allowFullscreen = true;
       f.referrerPolicy = 'strict-origin-when-cross-origin';
